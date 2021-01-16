@@ -1,5 +1,5 @@
 import Konva from 'konva';
-import playUI from '../components/UI/playUI'
+import { playUI, updateTable} from '../components/UI/playUI'
 
 const canvasOptions = {
     width: window.innerWidth,
@@ -45,7 +45,12 @@ export default function Level({items, background}) {
                 item.rotate(img.pos.r);     // вращаем картинку
 
                 item.on('click', function () {
-                    console.log(img.name)
+                    items = items.filter(el => el.name !== img.name);
+
+                    item.destroy();
+                    
+                    itemsLayer.batchDraw();
+                    updateTable(items);
                 });
 
                 itemsLayer.add(item);   // добавляем на слой

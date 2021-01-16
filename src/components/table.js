@@ -13,6 +13,6 @@ export default function table(items) {
   })
 
   table.appendChild(listItems);
-  console.log(items);
+  
   return table;
 }

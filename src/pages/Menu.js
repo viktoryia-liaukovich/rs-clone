@@ -1,6 +1,5 @@
 import { $, create } from '../utils/utils';
-import Level from './Level';
-import config from '../configs/levels';
+import Map from "./Map"
 
 const menuConfig = {
     NEW_GAME: 'New game',
@@ -25,7 +24,7 @@ export default function Menu() {
         switch(e.target.innerText) {
             case menuConfig.NEW_GAME: {
                 $('#root').innerHTML = '';
-                $('#root').appendChild(Level(config[1]));
+                $('#root').appendChild(Map());
                 break;
             }
         }

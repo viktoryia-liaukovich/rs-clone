@@ -8,6 +8,7 @@ export function playUI(items) {
 }
 
 export function updateTable(newItems) {
+  console.log('update', newItems);
   $('#root').removeChild(tableEl);
   tableEl = $('#root').appendChild(table(newItems));
 }

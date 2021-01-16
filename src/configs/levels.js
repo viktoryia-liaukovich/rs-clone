@@ -18,7 +18,7 @@ export default {
                 }
             },
             {
-                name: "Hat",
+                name: "Har",
                 image: Hat,
                 size: {
                     width: 288,
@@ -32,5 +32,9 @@ export default {
             }
         ],
         background: levelOne,
+        point: {
+            x: 100,
+            y: 100,
+        }
     } 
 }
