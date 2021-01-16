@@ -1,0 +1,22 @@
+.menu {
+    height: 100%;
+    background: url('./assets/backgrounds/menu.jpg');
+
+    nav {
+        position: absolute;
+        bottom: 100px;
+        left: 150px;
+        color: $color-text-light;
+        font-size: 32px;
+
+        li {
+            list-style: none;
+            margin-bottom: 15px;
+            cursor: pointer;
+
+            &:hover {
+                filter: brightness(0.5);
+            }
+        }
+    }
+}
