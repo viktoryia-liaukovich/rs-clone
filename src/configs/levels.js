@@ -1,11 +1,11 @@
-import levelOne from '../assets/backgrounds/menu.jpg';
+import levelOne from '../assets/backgrounds/11.jpg';
 import Hat from '../assets/items/hat.png';
 
 export default {
-    "1": {
+    1: {
         items: [
             {
-                name: "Hat",
+                name: 'Hat',
                 image: Hat,
                 size: {
                     width: 144,
@@ -18,7 +18,7 @@ export default {
                 }
             },
             {
-                name: "Har",
+                name: 'Har',
                 image: Hat,
                 size: {
                     width: 288,
@@ -31,7 +31,7 @@ export default {
                 }
             },
             {
-                name: "Hahaahahhahaha",
+                name: 'Hahaahahhahaha',
                 image: Hat,
                 size: {
                     width: 288,
@@ -44,7 +44,7 @@ export default {
                 }
             },
             {
-                name: "Har",
+                name: 'Har',
                 image: Hat,
                 size: {
                     width: 288,
@@ -57,7 +57,7 @@ export default {
                 }
             },
             {
-                name: "Har",
+                name: 'Har',
                 image: Hat,
                 size: {
                     width: 288,
@@ -70,7 +70,7 @@ export default {
                 }
             },
             {
-                name: "HarASSDADAS",
+                name: 'HarASSDADAS',
                 image: Hat,
                 size: {
                     width: 288,
@@ -83,7 +83,7 @@ export default {
                 }
             },
             {
-                name: "Haradasddfbghhkfs",
+                name: 'Haradasddfbghhkfs',
                 image: Hat,
                 size: {
                     width: 288,
