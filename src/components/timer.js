@@ -11,18 +11,19 @@ function getRemainTime(endTime) {
   };
 }
 
-export default function timer(endTime) {
+export default function timer() {
+  const endTime = new Date(Date.parse(new Date()) + 1 * 1 * 1 * 60 * 1000);
+
   const time = create('div');
   time.classList.add('timer');
   time.id = 'timerDown';
-
+  const minSecDiv = create('div');
+  minSecDiv.classList.add('timer-number');
   const minSec = create('span');
+  minSec.classList.add('timer-time');
 
-  const pageLost = create('div');
-  pageLost.innerText = 'Game away! Time is up!';
-
-  time.appendChild(minSec);
-  
+  minSecDiv.appendChild(minSec);
+  time.appendChild(minSecDiv);
   $('#root').appendChild(time);
   
   function updateTime() {
@@ -31,7 +32,23 @@ export default function timer(endTime) {
     if (t.total <= 0) {
       clearInterval(setInterval(updateTime, 1000));
       $('#root').removeChild(time);
+
+      const pageLost = create('div');
+      pageLost.id = 'timeUp';
+      const timeUpText = create('div');
+      timeUpText.id = 'timeUp-text';
+      timeUpText.innerText = 'Game away! Time is up!';
+      const newGame = create('button');
+      newGame.classList.add('newGame');
+      newGame.innerText = 'New Game';
+      timeUpText.appendChild(newGame);
+      pageLost.appendChild(timeUpText);
+
       $('#root').appendChild(pageLost);
+      newGame.addEventListener('click', () => {
+        $('#root').removeChild(pageLost);
+        timer();
+      });
     }
     
     minSec.innerHTML = `${(`0${t.minutes}`).slice(-2)}:${(`0${t.seconds}`).slice(-2)}`;

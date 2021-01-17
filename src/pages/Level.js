@@ -80,4 +80,7 @@ export default function Level({ items, background }) {
       playUI(items);
     });
   });
+  playUI(items);
+
+  timer();
 }
