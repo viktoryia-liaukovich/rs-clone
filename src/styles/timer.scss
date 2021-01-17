@@ -21,6 +21,13 @@
     background: #e6b147a6;
     display: inline-block; 
 }
+.timer-button{
+    border: 1px solid #e6b147a6;
+    color: #fff;
+    padding: 0 12px;
+    background:#e6b147a6;
+    cursor:pointer;
+}
 #timeUp{
     background: rgba(102, 102, 102, 0.5);
     width: 100%;
