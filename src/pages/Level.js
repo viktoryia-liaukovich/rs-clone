@@ -1,6 +1,6 @@
-import Konva from "konva";
-import { playUI, updateTable } from "../components/UI/playUI";
-import timer from "../components/timer";
+import Konva from 'konva';
+import { playUI, updateTable } from '../components/UI/playUI';
+import timer from '../components/timer';
 
 const canvasOptions = {
   width: window.innerWidth,
@@ -9,7 +9,7 @@ const canvasOptions = {
 
 export default function Level({ items, background }) {
   const stage = new Konva.Stage({
-    container: "root",
+    container: 'root',
     width: canvasOptions.width,
     height: canvasOptions.height,
   });
@@ -44,7 +44,7 @@ export default function Level({ items, background }) {
 
         item.rotate(img.pos.r);
 
-        item.on("click", function () {
+        item.on('click', () => {
           items = items.filter((el) => el.name !== img.name);
 
           item.destroy();
@@ -61,5 +61,5 @@ export default function Level({ items, background }) {
 
   playUI(items);
 
-  timer();
+  timer(80);
 }

@@ -15,11 +15,13 @@ function getRemainTime(endTime) {
 
 let isPlayGame = true;
 
-export default function timer() {
-  let endTime = new Date(Date.parse(new Date()) + 1 * 1 * 1 * 60 * 1000);
+export default function timer(sec) {
+  let endTime = new Date(Date.parse(new Date()) + sec * 1000);
+
   const time = create('div');
   time.classList.add('timer');
   time.id = 'timerDown';
+
   const minSecDiv = create('div');
   minSecDiv.classList.add('timer-number');
 
@@ -60,7 +62,7 @@ export default function timer() {
         timeUpText.appendChild(newGame);
         pageLoss.appendChild(timeUpText);
 
-        $('#root').appendChild(pageLost);
+        $('#root').appendChild(pageLoss);
 
         newGame.addEventListener('click', () => {
           $('#root').removeChild(pageLoss);
@@ -70,7 +72,9 @@ export default function timer() {
 
       minSec.innerHTML = `${(`0${t.minutes}`).slice(-2)}:${(`0${t.seconds}`).slice(-2)}`;
     } else {
-      endTime = new Date(Date.parse(new Date()) + 1 * 1 * 1 * lastRemainTime.seconds * 1000);
+      endTime = new Date(Date.parse(new Date())
+      + ((lastRemainTime.minutes * 60 === 0 ? 1 : lastRemainTime.minutes * 60)
+      + lastRemainTime.seconds) * 1000);
     }
   }
 
