@@ -29,7 +29,72 @@ export default {
                     y: 400,
                     r: 0,
                 }
-            }
+            },
+            {
+                name: "Hahaahahhahaha",
+                image: Hat,
+                size: {
+                    width: 288,
+                    height: 168,
+                },
+                pos: {
+                    x: 700,
+                    y: 400,
+                    r: 0,
+                }
+            },
+            {
+                name: "Har",
+                image: Hat,
+                size: {
+                    width: 288,
+                    height: 168,
+                },
+                pos: {
+                    x: 700,
+                    y: 400,
+                    r: 0,
+                }
+            },
+            {
+                name: "Har",
+                image: Hat,
+                size: {
+                    width: 288,
+                    height: 168,
+                },
+                pos: {
+                    x: 700,
+                    y: 400,
+                    r: 0,
+                }
+            },
+            {
+                name: "HarASSDADAS",
+                image: Hat,
+                size: {
+                    width: 288,
+                    height: 168,
+                },
+                pos: {
+                    x: 700,
+                    y: 400,
+                    r: 0,
+                }
+            },
+            {
+                name: "Haradasddfbghhkfs",
+                image: Hat,
+                size: {
+                    width: 288,
+                    height: 168,
+                },
+                pos: {
+                    x: 700,
+                    y: 400,
+                    r: 0,
+                }
+            },
         ],
         background: levelOne,
         point: {
