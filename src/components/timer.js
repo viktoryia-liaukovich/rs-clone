@@ -66,7 +66,7 @@ export default function timer(sec) {
 
         newGame.addEventListener('click', () => {
           $('#root').removeChild(pageLoss);
-          timer();
+          timer(sec);
         });
       }
 
