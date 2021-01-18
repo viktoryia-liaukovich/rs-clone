@@ -1,0 +1,13 @@
+.map {
+  height: 100vh;
+  background: url('./assets/backgrounds/image001.png');
+  background-size: cover;
+
+
+  .marker {
+    position: absolute;
+    width: 40px;
+    height: 60px;
+    background-color: red;
+  }
+}

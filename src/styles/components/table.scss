@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+.table {
+  position: absolute;
+  bottom: 0;
+  height: 110px;
+  width: 800px;
+  left: calc(50% - 400px);
+  background-image: url('./assets/UI/table.png');
+  background-size: cover;
+  padding: 15px 30px 0;
+
+  ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    height: 100%;
+    align-content: flex-start;
+  }
+
+  li {
+    width: 25%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 24px;
+  }
+}
+
