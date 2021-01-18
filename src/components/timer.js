@@ -1,6 +1,7 @@
 import { $, create } from '../utils/utils';
 
 let lastRemainTime = {};
+
 function getRemainTime(endTime) {
   const total = Date.parse(endTime) - Date.parse(new Date());
   const seconds = Math.floor((total / 1000) % 60);
@@ -11,7 +12,9 @@ function getRemainTime(endTime) {
     seconds,
   };
 }
+
 let isPlayGame = true;
+
 export default function timer() {
   let endTime = new Date(Date.parse(new Date()) + 1 * 1 * 1 * 60 * 1000);
   const time = create('div');
@@ -19,33 +22,41 @@ export default function timer() {
   time.id = 'timerDown';
   const minSecDiv = create('div');
   minSecDiv.classList.add('timer-number');
+
   const minSec = create('span');
   minSec.classList.add('timer-time');
   minSec.innerHTML = '00:00';
+
   const pauseGame = create('button');
   pauseGame.classList.add('timer-button');
   pauseGame.innerText = 'Pause';
+
   minSecDiv.appendChild(minSec);
   time.appendChild(minSecDiv);
   time.appendChild(pauseGame);
+
   $('#root').appendChild(time);
 
   function updateTime() {
     if (isPlayGame) {
       const t = getRemainTime(endTime);
       lastRemainTime = t;
+
       if (t.total <= 0) {
         clearInterval(setInterval(updateTime, 1000));
         $('#root').removeChild(time);
 
         const pageLoss = create('div');
         pageLoss.id = 'timeUp';
+
         const timeUpText = create('div');
         timeUpText.id = 'timeUp-text';
         timeUpText.innerText = 'Game away! Time is up!';
+
         const newGame = create('button');
         newGame.classList.add('newGame');
         newGame.innerText = 'New Game';
+
         timeUpText.appendChild(newGame);
         pageLoss.appendChild(timeUpText);
 
@@ -62,7 +73,9 @@ export default function timer() {
       endTime = new Date(Date.parse(new Date()) + 1 * 1 * 1 * lastRemainTime.seconds * 1000);
     }
   }
+
   setInterval(updateTime, 1000);
+
   pauseGame.addEventListener('click', () => {
     if (pauseGame.innerText === 'Pause') {
       pauseGame.innerText = 'Continue';
