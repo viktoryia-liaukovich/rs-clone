@@ -30,6 +30,7 @@ export default function timer(sec) {
   minSec.innerHTML = '00:00';
 
   const pauseGame = create('button');
+  pauseGame.id = 'pauseGame';
   pauseGame.classList.add('timer-button');
   pauseGame.innerText = 'Pause';
 
