@@ -7,7 +7,7 @@ const canvasOptions = {
   height: window.innerHeight,
 };
 
-export default function Level({ items, background }) {
+export default function Level({ items, background, time }) {
   const stage = new Konva.Stage({
     container: 'root',
     width: canvasOptions.width,
@@ -61,5 +61,5 @@ export default function Level({ items, background }) {
 
   playUI(items);
 
-  timer(80);
+  timer(time);
 }
