@@ -1,4 +1,5 @@
 import { $, create } from '../utils/utils';
+import popup from './popup';
 
 let lastRemainTime = {};
 
@@ -20,7 +21,7 @@ export default function timer(sec) {
 
   const time = create('div');
   time.classList.add('timer');
-  time.id = 'timerDown';
+  time.id = 'timer';
 
   const minSecDiv = create('div');
   minSecDiv.classList.add('timer-number');
@@ -40,35 +41,18 @@ export default function timer(sec) {
 
   $('#root').appendChild(time);
 
+  let interval;
+
   function updateTime() {
     if (isPlayGame) {
       const t = getRemainTime(endTime);
       lastRemainTime = t;
 
       if (t.total <= 0) {
-        clearInterval(setInterval(updateTime, 1000));
+        clearInterval(interval);
         $('#root').removeChild(time);
 
-        const pageLoss = create('div');
-        pageLoss.id = 'timeUp';
-
-        const timeUpText = create('div');
-        timeUpText.id = 'timeUp-text';
-        timeUpText.innerText = 'Game away! Time is up!';
-
-        const newGame = create('button');
-        newGame.classList.add('newGame');
-        newGame.innerText = 'New Game';
-
-        timeUpText.appendChild(newGame);
-        pageLoss.appendChild(timeUpText);
-
-        $('#root').appendChild(pageLoss);
-
-        newGame.addEventListener('click', () => {
-          $('#root').removeChild(pageLoss);
-          timer(sec);
-        });
+        popup('Game away! Time is up!', 'New Game', () => { timer(sec); });
       }
 
       minSec.innerHTML = `${(`0${t.minutes}`).slice(-2)}:${(`0${t.seconds}`).slice(-2)}`;
@@ -79,14 +63,13 @@ export default function timer(sec) {
     }
   }
 
-  setInterval(updateTime, 1000);
+  interval = setInterval(updateTime, 1000);
 
   pauseGame.addEventListener('click', () => {
-    if (pauseGame.innerText === 'Pause') {
-      pauseGame.innerText = 'Continue';
-    } else {
-      pauseGame.innerText = 'Pause';
-    }
+    pauseGame.innerText = 'Continue';
+
+    popup('Pause the game!', 'Continue', () => { isPlayGame = !isPlayGame; pauseGame.innerText = 'Pause'; });
+
     isPlayGame = !isPlayGame;
   });
 

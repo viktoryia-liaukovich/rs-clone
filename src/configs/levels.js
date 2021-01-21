@@ -104,6 +104,6 @@ export default {
       x: 100,
       y: 100,
     },
-    time: 80,
+    time: 30,
   },
 };
