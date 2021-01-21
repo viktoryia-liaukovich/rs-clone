@@ -1,24 +1,24 @@
 import { $, create } from '../utils/utils';
 
 export default function popup(text, buttonText, func) {
-  const pageLoss = create('div');
-  pageLoss.id = 'timeUp';
+  const pagePopup = create('div');
+  pagePopup.id = 'popup';
 
-  const timeUpText = create('div');
-  timeUpText.id = 'timeUp-text';
-  timeUpText.innerText = text;
+  const popupText = create('div');
+  popupText.id = 'popup-text';
+  popupText.innerText = text;
 
-  const newGame = create('button');
-  newGame.classList.add('newGame');
-  newGame.innerText = buttonText;
+  const btnPopup = create('button');
+  btnPopup.classList.add('btnPopup');
+  btnPopup.innerText = buttonText;
 
-  timeUpText.appendChild(newGame);
-  pageLoss.appendChild(timeUpText);
+  popupText.appendChild(btnPopup);
+  pagePopup.appendChild(popupText);
 
-  $('#root').appendChild(pageLoss);
+  $('#root').appendChild(pagePopup);
 
-  newGame.addEventListener('click', () => {
-    $('#root').removeChild(pageLoss);
+  btnPopup.addEventListener('click', () => {
+    $('#root').removeChild(pagePopup);
     func();
   });
 }
