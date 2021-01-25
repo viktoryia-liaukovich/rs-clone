@@ -1,5 +1,7 @@
 import { $, create } from '../utils/utils';
 import popup from './popup';
+import Lost from '../assets/popup/lost.gif';
+import Pause from '../assets/popup/pause.gif';
 
 let lastRemainTime = {};
 
@@ -52,7 +54,7 @@ export default function timer(sec) {
         clearInterval(interval);
         $('#root').removeChild(time);
 
-        popup('Game away! Time is up!', 'New Game', () => { timer(sec); });
+        popup('Game away! Time is up!', 'New Game', Lost, () => { timer(sec); });
       }
 
       minSec.innerHTML = `${(`0${t.minutes}`).slice(-2)}:${(`0${t.seconds}`).slice(-2)}`;
@@ -68,7 +70,7 @@ export default function timer(sec) {
   pauseGame.addEventListener('click', () => {
     pauseGame.innerText = 'Continue';
 
-    popup('Pause the game!', 'Continue', () => { isPlayGame = !isPlayGame; pauseGame.innerText = 'Pause'; });
+    popup('Pause the game!', 'Continue', Pause, () => { isPlayGame = !isPlayGame; pauseGame.innerText = 'Pause'; });
 
     isPlayGame = !isPlayGame;
   });

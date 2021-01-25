@@ -1,23 +1,28 @@
 import { $, create } from '../utils/utils';
 
-export default function popup(text, buttonText, func) {
+export default function popup(text, buttonText, image, func) {
   const pagePopup = create('div');
   pagePopup.id = 'popup';
 
   const popupText = create('div');
-  popupText.id = 'popup-text';
+  popupText.id = `${pagePopup.id}__text`;
   popupText.innerText = text;
 
-  const btnPopup = create('button');
-  btnPopup.classList.add('btnPopup');
-  btnPopup.innerText = buttonText;
+  const popupImage = create('img');
+  popupImage.classList.add(`${pagePopup.id}__img`);
+  popupImage.src = image;
 
-  popupText.appendChild(btnPopup);
+  const popupBtn = create('button');
+  popupBtn.classList.add(`${pagePopup.id}__btn`);
+  popupBtn.innerText = buttonText;
+
+  popupText.appendChild(popupImage);
+  popupText.appendChild(popupBtn);
   pagePopup.appendChild(popupText);
 
   $('#root').appendChild(pagePopup);
 
-  btnPopup.addEventListener('click', () => {
+  popupBtn.addEventListener('click', () => {
     $('#root').removeChild(pagePopup);
     func();
   });
