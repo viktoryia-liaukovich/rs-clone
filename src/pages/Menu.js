@@ -1,5 +1,7 @@
+import optionsPopup from '../components/optionsPopup';
 import { $, create } from '../utils/utils';
-import Map from "./Map"
+import { playMenuMusic } from '../utils/music';
+import Map from "./Map";
 
 const menuConfig = {
     NEW_GAME: 'New game',
@@ -21,10 +23,15 @@ export default function Menu() {
     });
 
     nav.addEventListener('click', (e) => {
+        playMenuMusic();
         switch(e.target.innerText) {
             case menuConfig.NEW_GAME: {
                 $('#root').innerHTML = '';
                 $('#root').appendChild(Map());
+                break;
+            }
+            case menuConfig.OPTIONS: {
+                $('#root').appendChild(optionsPopup());
                 break;
             }
         }
