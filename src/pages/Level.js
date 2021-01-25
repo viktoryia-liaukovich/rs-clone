@@ -1,6 +1,7 @@
 import Konva from 'konva';
 import { playUI, updateTable } from '../components/UI/playUI';
 import timer from '../components/timer';
+import hint from '../components/hint';
 
 const canvasOptions = {
   width: window.innerWidth,
@@ -45,16 +46,21 @@ export default function Level({ items, background, time }) {
         item.rotate(img.pos.r);
 
         item.on('click', () => {
+          debugger;
           items = items.filter((el) => el.name !== img.name);
 
           item.destroy();
 
           itemsLayer.batchDraw();
           updateTable(items);
+          hint(items, itemsLayer);
         });
 
         itemsLayer.add(item);
         itemsLayer.batchDraw();
+
+        // eslint-disable-next-line dot-notation
+        img['imageItem'] = item;
       });
     });
   });
@@ -62,4 +68,5 @@ export default function Level({ items, background, time }) {
   playUI(items);
 
   timer(time);
+  hint(items, itemsLayer);
 }
