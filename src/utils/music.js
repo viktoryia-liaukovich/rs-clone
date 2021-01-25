@@ -4,10 +4,27 @@ const soundbank = {
     menu: new Audio(menuSound),
 };
 
+const musicbank = {
+    menu: new Audio(menuSound),
+};
+
 export function playMenuMusic() {
-    soundbank.menu.play();
+    musicbank.menu.play();
 }
 
 export function stopMenuMusic() {
-    soundbank.menu.stop();
+    musicbank.menu.pause();
+}
+
+export function changeMusicVolume(value) {
+    Object.values(musicbank).forEach((el) => {
+        el.volume = value;
+    })
+}
+
+export function changeSoundsVolume(value) {
+    Object.values(soundbank).forEach((el) => {
+        el.volume = value;
+        playMenuMusic();
+    })
 }
