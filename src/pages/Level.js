@@ -1,6 +1,11 @@
 import Konva from 'konva';
 import { playUI, updateTable } from '../components/UI/playUI';
 import timer from '../components/timer';
+import variables from '../global/variables';
+import popup from '../components/popup';
+import Won from '../assets/popup/won.gif';
+import levels from '../configs/levels';
+import { $ } from '../utils/utils';
 
 const canvasOptions = {
   width: window.innerWidth,
@@ -52,6 +57,20 @@ export default function Level({ items, background, time }) {
 
           itemsLayer.batchDraw();
           updateTable(levelItems);
+          if (items.length === 0) {
+            popup({
+              title: 'You won!',
+              buttonText: 'Next level',
+              image: Won,
+              callback: () => {
+                $('#root').innerHTML = '';
+                variables.currentLevel += 1;
+                Level(levels[variables.currentLevel]);
+              },
+            });
+
+            clearInterval(variables.timerId);
+          }
         });
 
         itemsLayer.add(item);

@@ -2,6 +2,7 @@ import { $, create } from '../utils/utils';
 import popup from './popup';
 import Lost from '../assets/popup/lost.gif';
 import Pause from '../assets/popup/pause.gif';
+import variables from '../global/variables';
 
 let lastRemainTime = {};
 
@@ -16,9 +17,8 @@ function getRemainTime(endTime) {
   };
 }
 
-let isPlayGame = true;
-
 export default function timer(sec) {
+  let isPlayGame = true;
   let endTime = new Date(Date.parse(new Date()) + sec * 1000);
 
   const time = create('div');
@@ -43,7 +43,7 @@ export default function timer(sec) {
 
   $('#root').appendChild(time);
 
-  let interval;
+  let timerId;
 
   function updateTime() {
     if (isPlayGame) {
@@ -51,10 +51,14 @@ export default function timer(sec) {
       lastRemainTime = t;
 
       if (t.total <= 0) {
-        clearInterval(interval);
+        clearInterval(timerId);
         $('#root').removeChild(time);
 
-        popup('Game away! Time is up!', 'New Game', Lost, () => { timer(sec); });
+        popup({
+          title: 'Game away! Time is up!',
+          buttonText: 'New Game',
+          image: Lost,
+        });
       }
 
       minSec.innerHTML = `${(`0${t.minutes}`).slice(-2)}:${(`0${t.seconds}`).slice(-2)}`;
@@ -65,13 +69,20 @@ export default function timer(sec) {
     }
   }
 
-  interval = setInterval(updateTime, 1000);
+  timerId = setInterval(updateTime, 1000);
+  variables.timerId = timerId;
 
   pauseGame.addEventListener('click', () => {
     pauseGame.innerText = 'Continue';
 
-    popup('Pause the game!', 'Continue', Pause, () => { isPlayGame = !isPlayGame; pauseGame.innerText = 'Pause'; });
-
+    popup({
+      title: 'Pause the game!!',
+      buttonText: 'Continue',
+      image: Pause,
+      callback: () => {
+        isPlayGame = !isPlayGame; pauseGame.innerText = 'Pause';
+      },
+    });
     isPlayGame = !isPlayGame;
   });
 
