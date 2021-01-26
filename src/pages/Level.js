@@ -46,7 +46,6 @@ export default function Level({ items, background, time }) {
         item.rotate(img.pos.r);
 
         item.on('click', () => {
-          debugger;
           items = items.filter((el) => el.name !== img.name);
 
           item.destroy();
@@ -59,8 +58,7 @@ export default function Level({ items, background, time }) {
         itemsLayer.add(item);
         itemsLayer.batchDraw();
 
-        // eslint-disable-next-line dot-notation
-        img['imageItem'] = item;
+        img.imageItem = item;
       });
     });
   });
