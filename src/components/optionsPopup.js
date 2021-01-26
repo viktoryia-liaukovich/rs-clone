@@ -66,7 +66,7 @@ export default function optionsPopup() {
   optionsContent.appendChild(createSoundsOptions(soundsIcon, changeSoundsVolume));
 
   options.onclick = (e) => {
-    if (e.target.classList.contains('options')) {
+    if (e.target.classList.contains(options.className)) {
       options.remove();
     }
   };
