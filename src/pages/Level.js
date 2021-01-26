@@ -8,6 +8,7 @@ const canvasOptions = {
 };
 
 export default function Level({ items, background, time }) {
+  let levelItems = items;
   const stage = new Konva.Stage({
     container: 'root',
     width: canvasOptions.width,
@@ -29,7 +30,7 @@ export default function Level({ items, background, time }) {
     bgLayer.add(bg);
     bgLayer.batchDraw();
 
-    items.forEach((img) => {
+    levelItems.forEach((img) => {
       Konva.Image.fromURL(img.image, (item) => {
         item.setAttrs({
           x: img.pos.x,
@@ -45,12 +46,12 @@ export default function Level({ items, background, time }) {
         item.rotate(img.pos.r);
 
         item.on('click', () => {
-          items = items.filter((el) => el.name !== img.name);
+          levelItems = levelItems.filter((el) => el.name !== img.name);
 
           item.destroy();
 
           itemsLayer.batchDraw();
-          updateTable(items);
+          updateTable(levelItems);
         });
 
         itemsLayer.add(item);
@@ -59,7 +60,7 @@ export default function Level({ items, background, time }) {
     });
   });
 
-  playUI(items);
+  playUI(levelItems);
 
   timer(time);
 }

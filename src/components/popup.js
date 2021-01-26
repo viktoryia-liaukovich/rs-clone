@@ -5,7 +5,7 @@ export default function popup(text, buttonText, image, func) {
   pagePopup.id = 'popup';
 
   const popupText = create('div');
-  popupText.id = `${pagePopup.id}__text`;
+  popupText.id = 'popup-text';
   popupText.innerText = text;
 
   const popupImage = create('img');
@@ -22,7 +22,7 @@ export default function popup(text, buttonText, image, func) {
 
   $('#root').appendChild(pagePopup);
 
-  popupBtn.addEventListener('click', () => {
+  btnPopup.addEventListener('click', () => {
     $('#root').removeChild(pagePopup);
     func();
   });
