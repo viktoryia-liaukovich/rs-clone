@@ -12,7 +12,7 @@ export default function popup({
   pagePopup.id = 'popup';
 
   const popupText = create('div');
-  popupText.id = 'popup-text';
+  popupText.id = 'popup__text';
   popupText.innerText = title;
 
   const popupImage = create('img');
