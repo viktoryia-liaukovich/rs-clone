@@ -1,5 +1,5 @@
-import table from "../table";
-import { $ } from "../../utils/utils"
+import table from '../table';
+import { $ } from '../../utils/utils';
 
 let tableEl = null;
 
