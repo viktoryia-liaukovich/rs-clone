@@ -1,6 +1,7 @@
 import Konva from 'konva';
 import { playUI, updateTable } from '../components/UI/playUI';
 import timer from '../components/timer';
+import hint from '../components/hint';
 
 const canvasOptions = {
   width: window.innerWidth,
@@ -51,11 +52,15 @@ export default function Level({ items, background, time }) {
           item.destroy();
 
           itemsLayer.batchDraw();
+
           updateTable(levelItems);
+          hint(levelItems, itemsLayer);
         });
 
         itemsLayer.add(item);
         itemsLayer.batchDraw();
+
+        img.imageItem = item;
       });
     });
   });
@@ -63,4 +68,5 @@ export default function Level({ items, background, time }) {
   playUI(levelItems);
 
   timer(time);
+  hint(items, itemsLayer);
 }
