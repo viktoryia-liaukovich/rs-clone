@@ -34,6 +34,7 @@ export default function Menu() {
       $('#root').appendChild(optionsPopup());
       break;
     }
+    default: break;
     }
   });
 
