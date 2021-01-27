@@ -54,7 +54,7 @@ export default function Level({ items, background, time }) {
           itemsLayer.batchDraw();
 
           updateTable(levelItems);
-          hint(items, itemsLayer);
+          hint(levelItems, itemsLayer);
         });
 
         itemsLayer.add(item);
