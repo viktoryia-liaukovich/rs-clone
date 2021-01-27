@@ -3,6 +3,7 @@ import config from '../configs/levels';
 import Level from './Level';
 import pageLoader from '../components/pageLoader';
 import markerIcon from '../assets/UI/location-pin.png';
+import variables from '../global/variables';
 
 export default function Map() {
   const mapWrapper = create('div');
@@ -20,7 +21,11 @@ export default function Map() {
 
     marker.addEventListener('click', () => {
       $('#root').innerHTML = '';
-      Level(config[i + 1]);
+
+      const levelNumber = i + 1;
+      Level(config[levelNumber]);
+      variables.currentLevel = levelNumber;
+
       $('#root').appendChild(pageLoader());
     });
   });
