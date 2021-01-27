@@ -57,7 +57,7 @@ export default function Level({ items, background, time }) {
 
           itemsLayer.batchDraw();
           updateTable(levelItems);
-          if (items.length === 0) {
+          if (levelItems.length === 0) {
             popup({
               title: 'You won!',
               buttonText: 'Next level',

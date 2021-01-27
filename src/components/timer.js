@@ -76,7 +76,7 @@ export default function timer(sec) {
     pauseGame.innerText = 'Continue';
 
     popup({
-      title: 'Pause the game!!',
+      title: 'Game is paused!',
       buttonText: 'Continue',
       image: Pause,
       callback: () => {
