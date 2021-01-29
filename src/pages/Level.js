@@ -7,7 +7,7 @@ import timer from '../components/timer';
 import popup from '../components/popup';
 import hint from '../components/hint';
 import Won from '../assets/popup/won.gif';
-
+import Final from './Final';
 
 const canvasOptions = {
   width: window.innerWidth,
@@ -62,22 +62,36 @@ export default function Level({ items, background, time }) {
           updateTable(levelItems);
 
           if (levelItems.length === 0) {
-            popup({
-              title: 'You won!',
-              buttonText: 'Next level',
-              image: Won,
-              callback: () => {
-                $('#root').innerHTML = '';
-                variables.currentLevel += 1;
-                Level(levels[variables.currentLevel]);
-              },
-            });
+            variables.currentLevel += 1;
+            if (levels[variables.currentLevel]) {
+              popup({
+                title: 'You won!',
+                buttonText: 'Next level',
+                image: Won,
+                callback: () => {
+                  $('#root').innerHTML = '';
+                  Level(levels[variables.currentLevel]);
+                },
+              });
+            } else {
+              $('#root').innerHTML = '';
+              $('#root').appendChild(Final());
+              /* popup({
+                title: 'Game over',
+                buttonText: 'Next level',
+                image: Won,
+                callback: () => {
+                  $('#root').innerHTML = '';
+                  variables.currentLevel += 1;
+                  Level(levels[variables.currentLevel]);
+                },
+              }); */
+            }
 
             clearInterval(variables.timerId);
           }
 
           hint(levelItems, itemsLayer);
-
         });
 
         itemsLayer.add(item);
