@@ -7,4 +7,4 @@ import startupModal from './components/startupModal';
 
 $('#root').appendChild(Menu());
 $('#root').appendChild(startupModal());
-// Level(config['1']);
+// Level(config[0]);

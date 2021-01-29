@@ -22,9 +22,9 @@ export default function Map() {
     marker.addEventListener('click', () => {
       $('#root').innerHTML = '';
 
-      const levelNumber = i + 1;
-      Level(config[levelNumber]);
-      variables.currentLevel = levelNumber;
+      variables.currentLevel = i;
+
+      Level(config[i]);
 
       $('#root').appendChild(pageLoader());
     });
