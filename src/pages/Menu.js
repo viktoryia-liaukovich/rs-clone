@@ -1,6 +1,8 @@
 import optionsPopup from '../components/optionsPopup';
 import { $, create } from '../utils/utils';
 import Map from './Map';
+import mode from '../components/mode';
+import variables from '../global/variables';
 
 const menuConfig = {
   NEW_GAME: 'New game',
@@ -41,6 +43,8 @@ export default function Menu() {
   });
 
   menuWrapper.appendChild(nav);
+
+  menuWrapper.appendChild(mode());
 
   return menuWrapper;
 }
