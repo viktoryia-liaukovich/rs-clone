@@ -1,5 +1,5 @@
 import Konva from 'konva';
-import { playUI, updateTable } from '../components/UI/playUI';
+import { playUI, updateTable, updateMoves } from '../components/UI/playUI';
 import { $ } from '../utils/utils';
 import levels from '../configs/levels';
 import variables from '../global/variables';
@@ -8,7 +8,7 @@ import popup from '../components/popup';
 import hint from '../components/hint';
 import Won from '../assets/popup/won.gif';
 import Final from './Final';
-import moves from '../components/moves';
+import Lost from '../assets/popup/lost.gif';
 import dialogueUI from '../components/UI/dialogueUI';
 
 const canvasOptions = {
@@ -17,7 +17,21 @@ const canvasOptions = {
 };
 
 export default function Level(config) {
-  const { items, background, time, move } = config;
+  const {
+    items, background, time, move,
+  } = config;
+  let count = move;
+  function findAttempt() {
+    count -= 1;
+    updateMoves(count);
+    if (count === 0) {
+      popup({
+        title: 'Game away!',
+        buttonText: 'New Game',
+        image: Lost,
+      });
+    }
+  }
 
   let levelItems = items;
   const stage = new Konva.Stage({
@@ -32,6 +46,11 @@ export default function Level(config) {
   stage.add(bgLayer);
   stage.add(itemsLayer);
 
+  if (variables.childMode) {
+    stage.on('click', () => {
+      findAttempt();
+    });
+  }
   Konva.Image.fromURL(background, (bg) => {
     bg.setAttrs({
       x: 0,
@@ -66,15 +85,15 @@ export default function Level(config) {
           updateTable(levelItems);
 
           if (levelItems.length === 0 || (img.isKey === true && variables.childMode)) {
-            variables.currentLevel += 1;
-            if (levels[variables.currentLevel]) {
+            const nextLevel = variables.currentLevel + 1;
+            if (levels[nextLevel]) {
               popup({
                 title: 'You won!',
                 buttonText: 'Next level',
                 image: Won,
                 callback: () => {
                   $('#root').innerHTML = '';
-                  Level(levels[variables.currentLevel]);
+                  Level(levels[nextLevel]);
                 },
               });
             } else {
@@ -83,6 +102,9 @@ export default function Level(config) {
             }
 
             clearInterval(variables.timerId);
+          }
+          if (variables.childMode) {
+            findAttempt();
           }
 
           hint(levelItems, itemsLayer);
@@ -96,5 +118,7 @@ export default function Level(config) {
     });
   });
 
-  dialogueUI({ levelItems, move, time, itemsLayer });
+  dialogueUI({
+    levelItems, move, time, itemsLayer,
+  });
 }
