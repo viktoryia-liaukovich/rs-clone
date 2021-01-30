@@ -1,3 +1,4 @@
+import variables from '../global/variables';
 import { create } from '../utils/utils';
 
 export default function table(items) {
@@ -8,6 +9,9 @@ export default function table(items) {
 
   items.forEach((item) => {
     const liItem = create('li');
+    if (variables.childMode && item.isKey) {
+      liItem.classList.add('key');
+    }
     liItem.innerText = item.name;
     listItems.appendChild(liItem);
   });

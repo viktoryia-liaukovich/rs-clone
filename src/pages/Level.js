@@ -7,14 +7,16 @@ import timer from '../components/timer';
 import popup from '../components/popup';
 import hint from '../components/hint';
 import Won from '../assets/popup/won.gif';
-
+import moves from '../components/moves';
 
 const canvasOptions = {
   width: window.innerWidth,
   height: window.innerHeight,
 };
 
-export default function Level({ items, background, time }) {
+export default function Level({
+  items, background, time, move,
+}) {
   let levelItems = items;
   const stage = new Konva.Stage({
     container: 'root',
@@ -61,7 +63,7 @@ export default function Level({ items, background, time }) {
 
           updateTable(levelItems);
 
-          if (levelItems.length === 0) {
+          if (levelItems.length === 0 || (img.isKey === true && variables.childMode)) {
             popup({
               title: 'You won!',
               buttonText: 'Next level',
@@ -77,7 +79,6 @@ export default function Level({ items, background, time }) {
           }
 
           hint(levelItems, itemsLayer);
-
         });
 
         itemsLayer.add(item);
@@ -90,6 +91,10 @@ export default function Level({ items, background, time }) {
 
   playUI(levelItems);
 
-  timer(time);
+  if (variables.childMode) {
+    moves(move);
+  } else {
+    timer(time);
+  }
   hint(items, itemsLayer);
 }
