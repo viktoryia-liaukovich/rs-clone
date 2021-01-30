@@ -7,3 +7,10 @@ export function save(data = {}) {
 export function load() {
   return JSON.parse(localStorage.getItem('game save 1'));
 }
+
+export function setDefault() {
+  save({
+    music: '1',
+    sounds: '1',
+  })
+}
