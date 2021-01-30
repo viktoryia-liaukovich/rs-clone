@@ -1,8 +1,9 @@
-import { create } from '../utils/utils';
+import { create, append } from '../utils/utils';
 import musicIcon from '../assets/UI/music.png';
 import soundsIcon from '../assets/UI/sounds.png';
 import { changeMusicVolume, changeSoundsVolume } from '../utils/music';
 import { load } from '../utils/saveSystem';
+import mode from './mode';
 
 function createSoundsOptions(name, icon, callback) {
   const soundsOptions = create('div');
@@ -64,10 +65,23 @@ export default function optionsPopup() {
   const cross = create('div');
   cross.classList.add('close-cross');
 
+
+  const childModeOptions = create('div');
+  childModeOptions.classList.add('options--item');
+
+  const childModeText = create('p');
+  childModeText.innerText = 'Child mode';
+
+  append([childModeText, mode()], childModeOptions);
+
+
   optionsContent.appendChild(cross);
   optionsContent.appendChild(title);
   optionsContent.appendChild(createSoundsOptions('music', musicIcon, changeMusicVolume));
   optionsContent.appendChild(createSoundsOptions('sounds', soundsIcon, changeSoundsVolume));
+  optionsContent.appendChild(childModeOptions);
+
+
 
   options.onclick = (e) => {
     if (e.target.classList.contains(options.className)) {

@@ -1,5 +1,6 @@
 import variables from '../global/variables';
 import { $, create } from '../utils/utils';
+import { load, save } from '../utils/saveSystem';
 
 export default function mode() {
   const checkboxMode = create('div');
@@ -9,6 +10,9 @@ export default function mode() {
   checkbox.id = 'checkbox';
   checkbox.classList.add(`${checkbox.id}`);
   checkbox.type = `${checkbox.id}`;
+
+  if (load()['сhildMode'] === true) variables.childMode = true;
+
   checkbox.checked = variables.childMode;
 
   const checkboxLabel = create('label');
@@ -17,20 +21,23 @@ export default function mode() {
 
   const checkboxLabelOn = create('span');
   checkboxLabelOn.classList.add('on');
-  checkboxLabelOn.innerText = 'Child';
 
   const checkboxLabelOff = create('span');
   checkboxLabelOff.classList.add('off');
-  checkboxLabelOff.innerText = 'Adult';
 
   checkboxLabel.appendChild(checkboxLabelOn);
   checkboxLabel.appendChild(checkboxLabelOff);
 
+
   checkboxMode.appendChild(checkbox);
   checkboxMode.appendChild(checkboxLabel);
 
+
   checkbox.addEventListener('click', () => {
     variables.childMode = !variables.childMode;
+    save ({
+      сhildMode: variables.childMode,
+    });
   });
   return checkboxMode;
 }
