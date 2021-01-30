@@ -1,6 +1,7 @@
 import { changeMusicVolume, changeSoundsVolume, playMenuMusic } from '../utils/music';
 import { create } from '../utils/utils';
 import button from './button';
+import { load } from '../utils/saveSystem';
 
 export default function startupModal() {
   const modal = create('div');
@@ -16,8 +17,8 @@ export default function startupModal() {
   buttons.classList.add('buttons-wrapper');
 
   buttons.appendChild(button('Yes', () => {
-    changeMusicVolume('1');
-    changeSoundsVolume('1');
+    changeMusicVolume(load()['music']);
+    changeSoundsVolume(load()['sounds']);
     playMenuMusic();
     modal.remove();
   }, 'accept'))
