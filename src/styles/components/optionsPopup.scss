@@ -6,7 +6,7 @@
 
 .options--content {
   img {
-    cursor: pointer;
+    cursor: $cursor-pointer;
     filter: invert(1);
 
     &:hover {

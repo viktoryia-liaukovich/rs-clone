@@ -4,11 +4,11 @@
     color: #fff;
     padding: 0 12px;
     background: #e6b147a6;
-    cursor: pointer;
+    cursor: $cursor-pointer;
     position: fixed;
     right: 10px;
     top: 18%;
-  
+
 }
 .hintBtn.disabled {
     background: #6b6b6aa6;
