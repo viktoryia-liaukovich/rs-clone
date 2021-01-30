@@ -11,6 +11,9 @@ $color-accept: greenyellow;
 $color-decline: rgb(251, 63, 63);
 $shadow-default: 3px 3px 5px $color-dark-main;
 
+$cursor-default: url('./assets/UI/LOL_cursor2.cur'), auto;
+$cursor-pointer: url('./assets/UI/LOL_cursor3.cur'), pointer;
+
 @mixin res_320to768() {
   @media screen and (min-width: 320px) and (max-width: 767px) {
     @content;

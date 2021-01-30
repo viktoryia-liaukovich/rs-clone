@@ -49,7 +49,7 @@
       background-image: url('./assets/UI/button.png');
       background-size: 100% 100%;
       background-color: $color-button;
-      cursor: pointer;
+      cursor: $cursor-pointer;
       transition: 0.15s ease;
       border: none;
 
