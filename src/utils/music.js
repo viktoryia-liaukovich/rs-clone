@@ -1,5 +1,7 @@
 import menuSound from '../assets/sounds/menu.mp3';
 
+import { save } from './saveSystem';
+
 const soundbank = {
   menu: new Audio(menuSound),
 };
@@ -20,11 +22,19 @@ export function changeMusicVolume(value) {
   Object.values(musicbank).forEach((el) => {
     el.volume = value;
   });
+
+  save({
+    music: value,
+  });
 }
 
 export function changeSoundsVolume(value) {
   Object.values(soundbank).forEach((el) => {
     el.volume = value;
     playMenuMusic();
+  });
+
+  save({
+    sounds: value,
   });
 }

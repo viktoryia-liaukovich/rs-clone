@@ -2,7 +2,7 @@ import { create } from '../utils/utils';
 import musicIcon from '../assets/UI/music.png';
 import soundsIcon from '../assets/UI/sounds.png';
 import { changeMusicVolume, changeSoundsVolume } from '../utils/music';
-import { load, save } from '../utils/saveSystem';
+import { load } from '../utils/saveSystem';
 
 function createSoundsOptions(name, icon, callback) {
   const soundsOptions = create('div');
@@ -27,25 +27,13 @@ function createSoundsOptions(name, icon, callback) {
     if (soundsOptions.classList.contains('disabled')) {
       input.value = '0';
       callback('0');
-
-      save({
-        [name]: '0',
-      });
     } else {
       input.value = '1';
       callback('1');
-
-      save({
-        [name]: '1',
-      });
     }
   };
 
   input.onchange = (e) => {
-    save({
-      [name]: e.target.value,
-    });
-
     if (e.target.value === '0' && !soundsOptions.classList.contains('disabled')) {
       sounds.click();
     } else if (soundsOptions.classList.contains('disabled')) {
@@ -64,10 +52,10 @@ function createSoundsOptions(name, icon, callback) {
 
 export default function optionsPopup() {
   const options = create('div');
-  options.classList.add('options');
+  options.classList.add('options', 'modal');
 
   const optionsContent = create('div');
-  optionsContent.classList.add('options--content');
+  optionsContent.classList.add('options--content', 'modal--content');
   options.appendChild(optionsContent);
 
   const title = create('h2');

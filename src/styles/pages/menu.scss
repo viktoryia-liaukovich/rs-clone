@@ -15,7 +15,7 @@
             cursor: pointer;
 
             &:hover {
-                filter: brightness(0.5);
+                color: $color-focus;
             }
         }
     }

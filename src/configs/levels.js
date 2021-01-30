@@ -20,6 +20,7 @@ export default {
           y: 510,
           r: 45,
         },
+        isKey: false,
       },
       {
         name: 'Candle',
@@ -33,6 +34,7 @@ export default {
           y: 110,
           r: 0,
         },
+        isKey: false,
       },
       {
         name: 'Wreath',
@@ -46,6 +48,7 @@ export default {
           y: 430,
           r: -15,
         },
+        isKey: false,
       },
       {
         name: 'Snowflake',
@@ -56,9 +59,10 @@ export default {
         },
         pos: {
           x: 970,
-          y: 700,
+          y: 300,
           r: 0,
         },
+        isKey: true,
       },
 
     ],
@@ -68,7 +72,7 @@ export default {
       y: 100,
     },
     time: 30,
-
+    move: 10,
   },
   2: {
     items: [
@@ -84,6 +88,7 @@ export default {
           y: 510,
           r: 45,
         },
+        isKey: false,
       },
       {
         name: 'Candle',
@@ -97,6 +102,7 @@ export default {
           y: 110,
           r: 0,
         },
+        isKey: true,
       },
       {
         name: 'Wreath',
@@ -110,6 +116,7 @@ export default {
           y: 430,
           r: -15,
         },
+        isKey: false,
       },
       {
         name: 'Snowflake',
@@ -120,9 +127,10 @@ export default {
         },
         pos: {
           x: 970,
-          y: 700,
+          y: 500,
           r: 0,
         },
+        isKey: false,
       },
 
     ],
@@ -132,6 +140,7 @@ export default {
       y: 100,
     },
     time: 30,
+    move: 5,
 
   },
 };

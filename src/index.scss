@@ -3,10 +3,11 @@ $color-bg-card: #444444;
 $color-dark-main: rgba(51, 51, 51, 0.5);
 $color-text-dark: #333333;
 $color-text-light: #ffffff;
-$color-map-marker: #f03;
 $color-bg-popup: rgba(255,238,231, 0.2);
 $color-border-popup: #fff1e7;
 $color-focus: #2e72ff;
+$color-accept: greenyellow;
+$color-decline: rgb(251, 63, 63);
 $shadow-default: 3px 3px 5px $color-dark-main;
 
 @mixin res_320to768() {
@@ -67,3 +68,7 @@ $shadow-default: 3px 3px 5px $color-dark-main;
 @import './styles/components/popup.scss';
 @import './styles/components/loader.scss';
 @import './styles/components/hint.scss';
+@import './styles/components/modal.scss';
+@import './styles/components/button.scss';
+@import './styles/components/moves.scss';
+@import './styles/components/mode.scss';

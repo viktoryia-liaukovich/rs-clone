@@ -1,7 +1,8 @@
 import optionsPopup from '../components/optionsPopup';
 import { $, create } from '../utils/utils';
-import { playMenuMusic } from '../utils/music';
 import Map from './Map';
+import mode from '../components/mode';
+import variables from '../global/variables';
 
 const menuConfig = {
   NEW_GAME: 'New game',
@@ -23,7 +24,6 @@ export default function Menu() {
   });
 
   nav.addEventListener('click', (e) => {
-    playMenuMusic();
     switch (e.target.innerText) {
     case menuConfig.NEW_GAME: {
       $('#root').innerHTML = '';
@@ -34,11 +34,17 @@ export default function Menu() {
       $('#root').appendChild(optionsPopup());
       break;
     }
+    case menuConfig.EXIT: {
+      window.close();
+      break;
+    }
     default: break;
     }
   });
 
   menuWrapper.appendChild(nav);
+
+  menuWrapper.appendChild(mode());
 
   return menuWrapper;
 }

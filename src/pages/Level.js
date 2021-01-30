@@ -8,13 +8,16 @@ import popup from '../components/popup';
 import hint from '../components/hint';
 import Won from '../assets/popup/won.gif';
 import Final from './Final';
+import moves from '../components/moves';
 
 const canvasOptions = {
   width: window.innerWidth,
   height: window.innerHeight,
 };
 
-export default function Level({ items, background, time }) {
+export default function Level({
+  items, background, time, move,
+}) {
   let levelItems = items;
   const stage = new Konva.Stage({
     container: 'root',
@@ -61,7 +64,7 @@ export default function Level({ items, background, time }) {
 
           updateTable(levelItems);
 
-          if (levelItems.length === 0) {
+          if (levelItems.length === 0 || (img.isKey === true && variables.childMode)) {
             variables.currentLevel += 1;
             if (levels[variables.currentLevel]) {
               popup({
@@ -76,16 +79,6 @@ export default function Level({ items, background, time }) {
             } else {
               $('#root').innerHTML = '';
               $('#root').appendChild(Final());
-              /* popup({
-                title: 'Game over',
-                buttonText: 'Next level',
-                image: Won,
-                callback: () => {
-                  $('#root').innerHTML = '';
-                  variables.currentLevel += 1;
-                  Level(levels[variables.currentLevel]);
-                },
-              }); */
             }
 
             clearInterval(variables.timerId);
@@ -104,6 +97,10 @@ export default function Level({ items, background, time }) {
 
   playUI(levelItems);
 
-  timer(time);
+  if (variables.childMode) {
+    moves(move);
+  } else {
+    timer(time);
+  }
   hint(items, itemsLayer);
 }
