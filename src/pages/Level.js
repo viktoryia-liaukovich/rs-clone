@@ -7,6 +7,7 @@ import timer from '../components/timer';
 import popup from '../components/popup';
 import hint from '../components/hint';
 import Won from '../assets/popup/won.gif';
+import Final from './Final';
 import moves from '../components/moves';
 
 const canvasOptions = {
@@ -64,16 +65,21 @@ export default function Level({
           updateTable(levelItems);
 
           if (levelItems.length === 0 || (img.isKey === true && variables.childMode)) {
-            popup({
-              title: 'You won!',
-              buttonText: 'Next level',
-              image: Won,
-              callback: () => {
-                $('#root').innerHTML = '';
-                variables.currentLevel += 1;
-                Level(levels[variables.currentLevel]);
-              },
-            });
+            variables.currentLevel += 1;
+            if (levels[variables.currentLevel]) {
+              popup({
+                title: 'You won!',
+                buttonText: 'Next level',
+                image: Won,
+                callback: () => {
+                  $('#root').innerHTML = '';
+                  Level(levels[variables.currentLevel]);
+                },
+              });
+            } else {
+              $('#root').innerHTML = '';
+              $('#root').appendChild(Final());
+            }
 
             clearInterval(variables.timerId);
           }

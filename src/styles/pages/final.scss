@@ -1,0 +1,31 @@
+.final {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    background: white;
+    z-index: 1001;
+  }
+  
+  .final__image {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    background: url("./assets/final/final.gif") no-repeat;
+    width: 500px;
+    height: 388px;
+    margin: auto;
+    transform: scale(2);
+    margin-top: -194px;
+    margin-left: -250px;
+    box-shadow: inset 0 0 0 12px white;
+  }
+  
+  .final__text {
+    color: black;
+    text-align: center;
+    font-size: 32px;
+    margin-top: 30px;
+  }
