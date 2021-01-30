@@ -6,7 +6,7 @@ import Candle from '../assets/items/candle.png';
 import Snowflake from '../assets/items/snowflake.png';
 
 export default {
-  1: {
+  0: {
     items: [
       {
         name: 'Hat',
@@ -74,7 +74,7 @@ export default {
     time: 30,
     move: 10,
   },
-  2: {
+  1: {
     items: [
       {
         name: 'Hat',

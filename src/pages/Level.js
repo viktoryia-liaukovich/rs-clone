@@ -9,15 +9,16 @@ import hint from '../components/hint';
 import Won from '../assets/popup/won.gif';
 import Final from './Final';
 import moves from '../components/moves';
+import dialogueUI from '../components/UI/dialogueUI';
 
 const canvasOptions = {
   width: window.innerWidth,
   height: window.innerHeight,
 };
 
-export default function Level({
-  items, background, time, move,
-}) {
+export default function Level(config) {
+  const { items, background, time, move } = config;
+
   let levelItems = items;
   const stage = new Konva.Stage({
     container: 'root',
@@ -95,12 +96,5 @@ export default function Level({
     });
   });
 
-  playUI(levelItems);
-
-  if (variables.childMode) {
-    moves(move);
-  } else {
-    timer(time);
-  }
-  hint(items, itemsLayer);
+  dialogueUI({ levelItems, move, time, itemsLayer });
 }
