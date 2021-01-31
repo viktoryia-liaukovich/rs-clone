@@ -9,8 +9,18 @@
     height: 60px;
     cursor: $cursor-pointer;
     @include animation('jump 2s infinite');
+    animation-play-state: paused;
 
     z-index: 0;
+
+    &.disabled {
+      pointer-events: none;
+      filter: grayscale(1);
+    }
+
+    &.current {
+      animation-play-state: running;
+    }
   }
 }
 
