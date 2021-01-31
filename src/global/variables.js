@@ -4,6 +4,7 @@ const variables = {
   childMode: false,
   isWithMusic: false,
   isWithSounds: false,
+  isGameInProgress: true,
 };
 
 export default variables;

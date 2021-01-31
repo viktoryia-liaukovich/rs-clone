@@ -1,6 +1,7 @@
 import { $, create } from '../utils/utils';
 import popup from './popup';
-import Lost from '../assets/popup/lost.gif';
+
+import pauseGame from './pauseGame';
 
 export default function moves(count) {
   const move = create('div');
@@ -9,22 +10,10 @@ export default function moves(count) {
 
   const countMove = create('span');
   countMove.classList.add((`${move.id}__count`));
-  countMove.innerHTML = '0';
+  countMove.innerText = count;
 
   move.appendChild(countMove);
+  move.appendChild(pauseGame());
 
-  $('#root').appendChild(move);
-
-  document.getElementsByTagName('div')[0].onclick = function () {
-    if (count === 0) {
-      $('#root').removeChild(move);
-      popup({
-        title: 'Game away!',
-        buttonText: 'New Game',
-        image: Lost,
-      });
-    } else {
-      countMove.innerHTML = `${count--}`;
-    }
-  };
+  return move;
 }

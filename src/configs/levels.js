@@ -20,7 +20,7 @@ export default {
           y: 510,
           r: 45,
         },
-        isKey: false,
+
       },
       {
         name: 'Candle',
@@ -34,7 +34,7 @@ export default {
           y: 110,
           r: 0,
         },
-        isKey: false,
+
       },
       {
         name: 'Wreath',
@@ -48,7 +48,7 @@ export default {
           y: 430,
           r: -15,
         },
-        isKey: false,
+        isKey: true,
       },
       {
         name: 'Snowflake',
@@ -62,7 +62,7 @@ export default {
           y: 300,
           r: 0,
         },
-        isKey: true,
+
       },
 
     ],
@@ -88,7 +88,7 @@ export default {
           y: 510,
           r: 45,
         },
-        isKey: false,
+
       },
       {
         name: 'Candle',
@@ -116,7 +116,7 @@ export default {
           y: 430,
           r: -15,
         },
-        isKey: false,
+
       },
       {
         name: 'Snowflake',
@@ -130,7 +130,7 @@ export default {
           y: 500,
           r: 0,
         },
-        isKey: false,
+
       },
 
     ],
