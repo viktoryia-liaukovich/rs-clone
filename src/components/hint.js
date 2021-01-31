@@ -1,4 +1,5 @@
 import Konva from 'konva';
+import dictionary from '../configs/dictionary';
 import { $, create } from '../utils/utils';
 
 export default function hint(items, itemsLayer) {
@@ -7,7 +8,7 @@ export default function hint(items, itemsLayer) {
     hintBtn = create('button');
     hintBtn.classList.add('hintBtn');
     hintBtn.id = 'hintBtn';
-    hintBtn.innerText = 'Hint';
+    hintBtn.innerText = dictionary.HINT;
 
     $('#root').appendChild(hintBtn);
   } else {

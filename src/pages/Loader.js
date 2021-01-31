@@ -1,3 +1,4 @@
+import dictionary from '../configs/dictionary';
 import { create } from '../utils/utils';
 
 export default function pageLoader() {
@@ -10,7 +11,7 @@ export default function pageLoader() {
 
   const loaderText = create('p');
   loaderText.classList.add(`${loader.id}__text`);
-  loaderText.innerText = 'Loading...';
+  loaderText.innerText = dictionary.LOADING;
 
   loaderImage.appendChild(loaderText);
   loader.appendChild(loaderImage);

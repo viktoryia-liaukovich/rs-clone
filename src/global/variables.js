@@ -6,6 +6,7 @@ const variables = {
   music: false,
   sounds: false,
   fullscreen: Boolean(document.fullscreenElement),
+  lang: 'en',
 };
 
 export default variables;

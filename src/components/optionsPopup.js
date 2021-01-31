@@ -5,6 +5,7 @@ import { changeMusicVolume, changeSoundsVolume } from '../utils/music';
 import { load, save } from '../utils/saveSystem';
 import mode from './mode';
 import variables from '../global/variables';
+import dictionary from '../configs/dictionary';
 
 function createSoundsOptions(name, icon, callback) {
   const soundsOptions = create('div');
@@ -57,7 +58,7 @@ function createChildModeOption() {
   childModeOptions.classList.add('options--item');
 
   const childModeText = create('p');
-  childModeText.innerText = 'Child mode';
+  childModeText.innerText = dictionary.OPTIONS_CHILD_MODE;
 
   append([childModeText, mode('childMode', () => {
     variables.childMode = !variables.childMode;
@@ -82,7 +83,7 @@ function createFullscreenOption(){
   fullScreenOption.classList.add('options--item');
 
   const fullScreenText = create('p');
-  fullScreenText.innerText = 'Fullscreen (F11)';
+  fullScreenText.innerText = dictionary.OPTIONS_FULLSCREEN;
 
   append([fullScreenText, mode('fullscreen', toggleFullScreen)], fullScreenOption);
 
@@ -98,7 +99,7 @@ export default function optionsPopup() {
   options.appendChild(optionsContent);
 
   const title = create('h2');
-  title.innerText = 'OPTIONS';
+  title.innerText = dictionary.OPTIONS_TITLE;
 
   const cross = create('div');
   cross.classList.add('close-cross');
@@ -113,7 +114,7 @@ export default function optionsPopup() {
   ], optionsContent);
 
   options.onclick = (e) => {
-    if (e.target.classList.contains(options.className)) {
+    if (e.target.className === options.className) {
       options.remove();
     }
   };

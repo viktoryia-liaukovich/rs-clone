@@ -5,7 +5,7 @@ import dialog from "../dialog";
 
 export default function dialogueUI(options) {
   let dialogEl = null;
-  console.log(variables);
+
   const config = phrases[variables.currentLevel];
 
   dialogEl = $('#root').appendChild(dialog(config, options));

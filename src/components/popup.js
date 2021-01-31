@@ -1,3 +1,4 @@
+import dictionary from '../configs/dictionary';
 import levels from '../configs/levels';
 import variables from '../global/variables';
 import Level from '../pages/Level';
@@ -6,11 +7,10 @@ import { $, create } from '../utils/utils';
 import optionsPopup from './optionsPopup';
 
 const popupButtons = {
-  RESTART: 'Restart',
-  MENU: 'Main menu',
-  OPTIONS: 'Options',
-  LOAD: 'Load game',
-
+  RESTART: dictionary.RESTART,
+  MENU: dictionary.MENU,
+  OPTIONS: dictionary.OPTIONS,
+  LOAD: dictionary.LOAD,
 };
 
 export default function popup({
@@ -27,7 +27,7 @@ export default function popup({
   popupImage.classList.add(`${pagePopup.id}__img`);
   popupImage.src = image;
 
-  if (buttonText !== 'New Game') {
+  if (buttonText !== dictionary.NEW_GAME) {
     const popupBtn = create('button');
     popupBtn.classList.add(`${pagePopup.id}__btn`);
     popupBtn.innerText = buttonText;
