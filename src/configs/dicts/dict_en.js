@@ -14,7 +14,6 @@ export default {
   HINT: 'HINT',
   RESTART: 'Restart',
   MENU: 'Main menu',
-  OPTIONS: 'Options',
   LOAD: 'Load game',
   LEVEL_WON_TITLE: 'You won!',
   NEXT_LEVEL: 'Next level',

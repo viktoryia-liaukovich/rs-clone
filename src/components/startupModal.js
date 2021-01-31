@@ -3,6 +3,7 @@ import { create } from '../utils/utils';
 import button from './button';
 import { load } from '../utils/saveSystem';
 import dictionary from '../configs/dictionary';
+import variables from '../global/variables';
 
 export default function startupModal() {
   const modal = create('div');

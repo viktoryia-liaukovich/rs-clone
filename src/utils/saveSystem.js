@@ -17,7 +17,6 @@ export function setDefault() {
     childMode: false,
     lang: 'en',
   })
-  parseSave();
 }
 
 export function parseSave() {
