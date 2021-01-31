@@ -15,18 +15,18 @@ export function playUI({
   if (variables.childMode) {
     countMove = $('#root').appendChild(moves(move));
   } else {
-    timer(time);
+  $('#root').appendChild(timer(time));
   }
 
   hint(levelItems, itemsLayer);
 }
 
 export function updateTable(newItems) {
-  $('#root').removeChild(tableEl);
+  tableEl.remove();
   tableEl = $('#root').appendChild(table(newItems));
 }
 
 export function updateMoves(newMove) {
-  $('#root').removeChild(countMove);
+  countMove.remove();
   countMove = $('#root').appendChild(moves(newMove));
 }

@@ -3,9 +3,7 @@ import { playUI, updateTable, updateMoves } from '../components/UI/playUI';
 import { $ } from '../utils/utils';
 import levels from '../configs/levels';
 import variables from '../global/variables';
-import timer from '../components/timer';
 import popup from '../components/popup';
-import hint from '../components/hint';
 import Won from '../assets/popup/won.gif';
 import Final from './Final';
 import Lost from '../assets/popup/lost.gif';
@@ -20,7 +18,9 @@ export default function Level(config) {
   const {
     items, background, time, move,
   } = config;
+
   let count = move;
+
   function findAttempt() {
     count -= 1;
     updateMoves(count);
@@ -51,12 +51,14 @@ export default function Level(config) {
       findAttempt();
     });
   }
+
   Konva.Image.fromURL(background, (bg) => {
     bg.setAttrs({
       x: 0,
       y: 0,
       width: canvasOptions.width,
     });
+
     bgLayer.add(bg);
     bgLayer.batchDraw();
 
@@ -86,6 +88,7 @@ export default function Level(config) {
 
           if (levelItems.length === 0 || (img.isKey === true && variables.childMode)) {
             const nextLevel = variables.currentLevel + 1;
+
             if (levels[nextLevel]) {
               popup({
                 title: 'You won!',
@@ -103,11 +106,10 @@ export default function Level(config) {
 
             clearInterval(variables.timerId);
           }
+
           if (variables.childMode) {
             findAttempt();
           }
-
-          hint(levelItems, itemsLayer);
         });
 
         itemsLayer.add(item);
@@ -121,4 +123,6 @@ export default function Level(config) {
   dialogueUI({
     levelItems, move, time, itemsLayer,
   });
+
+  variables.isGameInProgress = true;
 }
