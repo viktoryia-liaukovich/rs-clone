@@ -91,6 +91,7 @@ export default function Level(config) {
             const nextLevel = variables.currentLevel + 1;
 
             if (levels[nextLevel]) {
+              variables.currentLevel = nextLevel;
               popup({
                 title: dictionary.LEVEL_WON_TITLE,
                 buttonText: dictionary.NEXT_LEVEL,

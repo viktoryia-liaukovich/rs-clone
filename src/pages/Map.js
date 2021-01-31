@@ -14,10 +14,10 @@ export default function Map() {
   if (!variables.isDialogFinished)  {
     dialogueUI(() => {
       variables.isDialogFinished = true;
+      save ({
+        isDialogFinished: variables.isDialogFinished,
+      })
     }, 'map');
-    save ({
-      isDialogFinished: variables.isDialogFinished,
-    })
   }
 
   Object.values(config).forEach((el, i) => {
@@ -28,12 +28,16 @@ export default function Map() {
     marker.style.top = `${el.point.y}px`;
     marker.style.left = `${el.point.x}px`;
 
+    if (i > variables.currentLevel) {
+      marker.classList.add('disabled');
+    } else if (i === variables.currentLevel) {
+      marker.classList.add('current');
+    }
+
     mapWrapper.appendChild(marker);
 
     marker.addEventListener('click', () => {
       $('#root').innerHTML = '';
-
-      variables.currentLevel = i;
 
       Level(config[i]);
 
