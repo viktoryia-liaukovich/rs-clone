@@ -105,8 +105,18 @@ function createLanguageSelector() {
     option.value = el;
     option.innerText = dictionary[`LANG_${el.toUpperCase()}`];
 
+    if (el === variables.lang) option.selected = true;
+
     select.appendChild(option);
   })
+
+  select.onchange = (e) => {
+    variables.lang = e.target.value;
+    save({
+      lang: e.target.value,
+    })
+    document.location.reload();
+  }
 
   append([languageText, select], languageOption);
 
