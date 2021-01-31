@@ -2,8 +2,9 @@ import { create, append } from '../utils/utils';
 import musicIcon from '../assets/UI/music.png';
 import soundsIcon from '../assets/UI/sounds.png';
 import { changeMusicVolume, changeSoundsVolume } from '../utils/music';
-import { load } from '../utils/saveSystem';
+import { load, save } from '../utils/saveSystem';
 import mode from './mode';
+import variables from '../global/variables';
 
 function createSoundsOptions(name, icon, callback) {
   const soundsOptions = create('div');
@@ -51,6 +52,43 @@ function createSoundsOptions(name, icon, callback) {
   return soundsOptions;
 }
 
+function createChildModeOption() {
+  const childModeOptions = create('div');
+  childModeOptions.classList.add('options--item');
+
+  const childModeText = create('p');
+  childModeText.innerText = 'Child mode';
+
+  append([childModeText, mode('childMode', () => {
+    variables.childMode = !variables.childMode;
+    save ({
+      childMode: variables.childMode,
+    });
+  })], childModeOptions);
+
+  return childModeOptions;
+}
+
+function toggleFullScreen() {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen();
+  } else if (document.exitFullscreen) {
+    document.exitFullscreen();
+  }
+}
+
+function createFullscreenOption(){
+  const fullScreenOption = create('div');
+  fullScreenOption.classList.add('options--item');
+
+  const fullScreenText = create('p');
+  fullScreenText.innerText = 'Fullscreen (F11)';
+
+  append([fullScreenText, mode('fullscreen', toggleFullScreen)], fullScreenOption);
+
+  return fullScreenOption;
+}
+
 export default function optionsPopup() {
   const options = create('div');
   options.classList.add('options', 'modal');
@@ -65,23 +103,14 @@ export default function optionsPopup() {
   const cross = create('div');
   cross.classList.add('close-cross');
 
-
-  const childModeOptions = create('div');
-  childModeOptions.classList.add('options--item');
-
-  const childModeText = create('p');
-  childModeText.innerText = 'Child mode';
-
-  append([childModeText, mode()], childModeOptions);
-
-
-  optionsContent.appendChild(cross);
-  optionsContent.appendChild(title);
-  optionsContent.appendChild(createSoundsOptions('music', musicIcon, changeMusicVolume));
-  optionsContent.appendChild(createSoundsOptions('sounds', soundsIcon, changeSoundsVolume));
-  optionsContent.appendChild(childModeOptions);
-
-
+  append([
+    cross,
+    title,
+    createSoundsOptions('music', musicIcon, changeMusicVolume),
+    createSoundsOptions('sounds', soundsIcon, changeSoundsVolume),
+    createChildModeOption(),
+    createFullscreenOption(),
+  ], optionsContent);
 
   options.onclick = (e) => {
     if (e.target.classList.contains(options.className)) {

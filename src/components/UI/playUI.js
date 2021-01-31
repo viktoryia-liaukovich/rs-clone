@@ -12,7 +12,6 @@ export function playUI({
 }) {
   tableEl = $('#root').appendChild(table(levelItems));
 
-  console.log(variables);
   if (variables.childMode) {
     countMove = $('#root').appendChild(moves(move));
   } else {
