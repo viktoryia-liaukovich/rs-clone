@@ -15,7 +15,7 @@ export function playUI({
   if (variables.childMode) {
     countMove = $('#root').appendChild(moves(move));
   } else {
-  $('#root').appendChild(timer(time));
+    $('#root').appendChild(timer(time));
   }
 
   hint(levelItems, itemsLayer);
