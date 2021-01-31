@@ -18,4 +18,8 @@ export default {
   LOAD: 'Load game',
   LEVEL_WON_TITLE: 'You won!',
   NEXT_LEVEL: 'Next level',
+  LANGUAGE: 'Language',
+  LANG_EN: 'English',
+  LANG_RU: 'Russian',
+  LANG_BY: 'Belarussian',
 }

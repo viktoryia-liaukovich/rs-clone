@@ -90,6 +90,29 @@ function createFullscreenOption(){
   return fullScreenOption;
 }
 
+function createLanguageSelector() {
+  const languageOption = create('div');
+  languageOption.classList.add('options--item');
+
+  const languageText = create('p');
+  languageText.innerText = dictionary.LANGUAGE;
+
+  const select = create('select');
+  select.classList.add('select');
+
+  ['en', 'ru', 'by'].forEach((el) => {
+    const option = create('option');
+    option.value = el;
+    option.innerText = dictionary[`LANG_${el.toUpperCase()}`];
+
+    select.appendChild(option);
+  })
+
+  append([languageText, select], languageOption);
+
+  return languageOption;
+}
+
 export default function optionsPopup() {
   const options = create('div');
   options.classList.add('options', 'modal');
@@ -111,6 +134,7 @@ export default function optionsPopup() {
     createSoundsOptions('sounds', soundsIcon, changeSoundsVolume),
     createChildModeOption(),
     createFullscreenOption(),
+    createLanguageSelector(),
   ], optionsContent);
 
   options.onclick = (e) => {
