@@ -45,7 +45,9 @@ export default function dialog(config, options) {
       wrapper.remove();
       blur.remove();
 
-      playUI(options);
+      if (typeof options === 'function') {
+        options();
+      } else playUI(options);
     }
   }
 

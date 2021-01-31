@@ -3,6 +3,26 @@ import bunny from '../assets/characters/bunny.png';
 import sandy from '../assets/characters/sandy.png';
 
 export default {
+  map: [
+    {
+      img: jack,
+      title: 'Jack',
+      text: 'I am Jack',
+      answer: 'Hello!',
+    },
+    {
+      img: sandy,
+      title: 'Sandyman',
+      text: 'We will guide yout through your journey! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet imperdiet justo.',
+      answer: 'Continue',
+    },
+    {
+      img: jack,
+      title: 'Jack',
+      text: 'Phasellus vel quam quis tellus gravida consectetur sit amet quis metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim est, laoreet nec rutrum in, semper vitae arcu.',
+      answer: "START",
+    }
+  ],
   0: [
     {
       img: jack,
