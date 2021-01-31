@@ -17,6 +17,7 @@ export function setDefault() {
     childMode: false,
     lang: 'en',
     isDialogFinished: false,
+    currentLevel: 0,
   })
 }
 

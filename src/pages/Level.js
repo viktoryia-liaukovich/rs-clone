@@ -9,6 +9,8 @@ import Final from './Final';
 import Lost from '../assets/popup/lost.gif';
 import dialogueUI from '../components/UI/dialogueUI';
 import dictionary from '../configs/dictionary';
+import { save } from '../utils/saveSystem';
+import Map from './Map';
 
 const canvasOptions = {
   width: window.innerWidth,
@@ -92,13 +94,18 @@ export default function Level(config) {
 
             if (levels[nextLevel]) {
               variables.currentLevel = nextLevel;
+
+              save({
+                currentLevel: variables.currentLevel,
+              })
+
               popup({
                 title: dictionary.LEVEL_WON_TITLE,
                 buttonText: dictionary.NEXT_LEVEL,
                 image: Won,
                 callback: () => {
                   $('#root').innerHTML = '';
-                  Level(levels[nextLevel]);
+                  $('#root').appendChild(Map());
                 },
               });
             } else {
