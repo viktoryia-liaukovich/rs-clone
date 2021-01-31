@@ -27,8 +27,8 @@ export default function Level(config) {
     updateMoves(count);
     if (count === 0) {
       popup({
-        title: 'Game away!',
-        buttonText: 'New Game',
+        title: dictionary.LOST_MESSAGE_MOVES,
+        buttonText: dictionary.NEW_GAME,
         image: Lost,
       });
     }

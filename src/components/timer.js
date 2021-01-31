@@ -3,11 +3,8 @@ import popup from './popup';
 import Lost from '../assets/popup/lost.gif';
 import Pause from '../assets/popup/pause.gif';
 import variables from '../global/variables';
-<<<<<<< HEAD
 import pauseGame from './pauseGame';
-=======
 import dictionary from '../configs/dictionary';
->>>>>>> beda08a... feat: add dictionary
 
 let lastRemainTime = {};
 
@@ -37,11 +34,6 @@ export default function timer(sec) {
   minSec.classList.add('timer-time');
   minSec.innerHTML = '00:00';
 
-  const pauseGame = create('button');
-  pauseGame.id = 'pauseGame';
-  pauseGame.classList.add('timer-button');
-  pauseGame.innerText = dictionary.PAUSE;
-
   minSecDiv.appendChild(minSec);
   time.appendChild(minSecDiv);
   time.appendChild(pauseGame());
@@ -58,8 +50,8 @@ export default function timer(sec) {
         $('#root').removeChild(time);
 
         popup({
-          title: 'Game away! Time is up!',
-          buttonText: 'New Game',
+          title: dictionary.LOST_MESSAGE,
+          buttonText: dictionary.NEW_GAME,
           image: Lost,
         });
       }
