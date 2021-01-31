@@ -1,14 +1,16 @@
 .map {
   height: 100vh;
-  background: url('./assets/backgrounds/image001.png');
+  background: url('./assets/backgrounds/map.png');
   background-size: cover;
-
+  background-position-y: -100px;
 
   .marker {
     position: absolute;
     height: 60px;
     cursor: $cursor-pointer;
     @include animation('jump 2s infinite');
+
+    z-index: 0;
   }
 }
 

@@ -9,6 +9,8 @@
     background-image: url('./assets/UI/papirus.png');
     background-repeat: no-repeat;
     background-size: cover;
+
+    z-index: 2;
   }
 
   &-blur {
@@ -18,6 +20,7 @@
     left: 0;
     right: 0;
     backdrop-filter: blur(10px);
+    z-index: 1;
   }
 
   &-avatar {

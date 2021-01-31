@@ -10,4 +10,4 @@ const langMap = {
   by: dict_by
 }
 
-export default langMap[load().lang || variables.lang];
+export default langMap[(load() && load().lang) || variables.lang];

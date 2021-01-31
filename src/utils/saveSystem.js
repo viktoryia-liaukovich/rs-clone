@@ -16,6 +16,7 @@ export function setDefault() {
     sounds: '1',
     childMode: false,
     lang: 'en',
+    isDialogFinished: false,
   })
 }
 
