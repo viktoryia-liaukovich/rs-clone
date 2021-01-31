@@ -24,4 +24,4 @@ export default {
   LANG_EN: 'English',
   LANG_RU: 'Russian',
   LANG_BY: 'Belarussian',
-}
+};

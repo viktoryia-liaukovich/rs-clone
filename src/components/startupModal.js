@@ -19,16 +19,16 @@ export default function startupModal() {
   buttons.classList.add('buttons-wrapper');
 
   buttons.appendChild(button(dictionary.ACCEPT, () => {
-    changeMusicVolume(load()['music']);
-    changeSoundsVolume(load()['sounds']);
+    changeMusicVolume(load().music);
+    changeSoundsVolume(load().sounds);
     playMenuMusic();
     modal.remove();
-  }, 'accept'))
+  }, 'accept'));
   buttons.appendChild(button(dictionary.DECLINE, () => {
     changeMusicVolume('0');
     changeSoundsVolume('0');
     modal.remove();
-  }, 'decline'))
+  }, 'decline'));
 
   modalContent.appendChild(title);
   modalContent.appendChild(buttons);

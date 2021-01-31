@@ -15,7 +15,7 @@ export default function mode(paramName, callback) {
 
   const checkboxLabel = create('label');
   checkboxLabel.htmlFor = `${checkbox.id}`;
-  checkboxLabel.classList.add(`checkbox__label`);
+  checkboxLabel.classList.add('checkbox__label');
 
   checkboxMode.appendChild(checkbox);
   checkboxMode.appendChild(checkboxLabel);

@@ -11,7 +11,7 @@
         "sourceType": "module"
     },
     "rules": {
-        "linebreak-style": ["warn", "unix"],
+        "linebreak-style": ["warn", "windows"],
         "indent": ["warn", 2],
         "no-var": "error",
         "no-console": "error"

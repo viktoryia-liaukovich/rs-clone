@@ -97,7 +97,7 @@ export default function Level(config) {
 
               save({
                 currentLevel: variables.currentLevel,
-              })
+              });
 
               popup({
                 title: dictionary.LEVEL_WON_TITLE,

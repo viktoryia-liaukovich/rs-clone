@@ -11,12 +11,12 @@ export default function Map() {
   const mapWrapper = create('div');
   mapWrapper.classList.add('map');
 
-  if (!variables.isDialogFinished)  {
+  if (!variables.isDialogFinished) {
     dialogueUI(() => {
       variables.isDialogFinished = true;
-      save ({
+      save({
         isDialogFinished: variables.isDialogFinished,
-      })
+      });
     }, 'map');
   }
 
