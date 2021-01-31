@@ -1,14 +1,13 @@
 import optionsPopup from '../components/optionsPopup';
 import { $, create } from '../utils/utils';
 import Map from './Map';
-import mode from '../components/mode';
-import variables from '../global/variables';
+import dictionary from '../configs/dictionary';
 
 const menuConfig = {
-  NEW_GAME: 'New game',
-  CONTINUE: 'Continue',
-  OPTIONS: 'Options',
-  EXIT: 'Exit game',
+  NEW_GAME: dictionary.NEW_GAME,
+  CONTINUE: dictionary.CONTINUE,
+  OPTIONS: dictionary.OPTIONS,
+  EXIT: dictionary.EXIT,
 };
 
 export default function Menu() {
@@ -43,8 +42,6 @@ export default function Menu() {
   });
 
   menuWrapper.appendChild(nav);
-
-  menuWrapper.appendChild(mode());
 
   return menuWrapper;
 }

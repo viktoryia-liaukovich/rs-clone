@@ -1,7 +1,7 @@
 import { $, create } from '../utils/utils';
 import config from '../configs/levels';
 import Level from './Level';
-import pageLoader from '../components/pageLoader';
+import pageLoader from './Loader';
 import markerIcon from '../assets/UI/location-pin.png';
 import variables from '../global/variables';
 

@@ -8,9 +8,14 @@
 
 #root {
     height: 100vh;
+    background-color: $color-bg-main;
 }
 
 canvas {
     width: 100%;
     height: 100%;
+}
+
+input, select, option {
+    cursor: $cursor-pointer;
 }

@@ -8,6 +8,7 @@ import Won from '../assets/popup/won.gif';
 import Final from './Final';
 import Lost from '../assets/popup/lost.gif';
 import dialogueUI from '../components/UI/dialogueUI';
+import dictionary from '../configs/dictionary';
 
 const canvasOptions = {
   width: window.innerWidth,
@@ -26,8 +27,8 @@ export default function Level(config) {
     updateMoves(count);
     if (count === 0) {
       popup({
-        title: 'Game away!',
-        buttonText: 'New Game',
+        title: dictionary.LOST_MESSAGE_MOVES,
+        buttonText: dictionary.NEW_GAME,
         image: Lost,
       });
     }
@@ -91,8 +92,8 @@ export default function Level(config) {
 
             if (levels[nextLevel]) {
               popup({
-                title: 'You won!',
-                buttonText: 'Next level',
+                title: dictionary.LEVEL_WON_TITLE,
+                buttonText: dictionary.NEXT_LEVEL,
                 image: Won,
                 callback: () => {
                   $('#root').innerHTML = '';

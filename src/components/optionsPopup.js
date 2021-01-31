@@ -1,8 +1,11 @@
-import { create } from '../utils/utils';
+import { create, append } from '../utils/utils';
 import musicIcon from '../assets/UI/music.png';
 import soundsIcon from '../assets/UI/sounds.png';
 import { changeMusicVolume, changeSoundsVolume } from '../utils/music';
-import { load } from '../utils/saveSystem';
+import { load, save } from '../utils/saveSystem';
+import mode from './mode';
+import variables from '../global/variables';
+import dictionary from '../configs/dictionary';
 
 function createSoundsOptions(name, icon, callback) {
   const soundsOptions = create('div');
@@ -50,6 +53,76 @@ function createSoundsOptions(name, icon, callback) {
   return soundsOptions;
 }
 
+function createChildModeOption() {
+  const childModeOptions = create('div');
+  childModeOptions.classList.add('options--item');
+
+  const childModeText = create('p');
+  childModeText.innerText = dictionary.OPTIONS_CHILD_MODE;
+
+  append([childModeText, mode('childMode', () => {
+    variables.childMode = !variables.childMode;
+    save ({
+      childMode: variables.childMode,
+    });
+  })], childModeOptions);
+
+  return childModeOptions;
+}
+
+function toggleFullScreen() {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen();
+  } else if (document.exitFullscreen) {
+    document.exitFullscreen();
+  }
+}
+
+function createFullscreenOption(){
+  const fullScreenOption = create('div');
+  fullScreenOption.classList.add('options--item');
+
+  const fullScreenText = create('p');
+  fullScreenText.innerText = dictionary.OPTIONS_FULLSCREEN;
+
+  append([fullScreenText, mode('fullscreen', toggleFullScreen)], fullScreenOption);
+
+  return fullScreenOption;
+}
+
+function createLanguageSelector() {
+  const languageOption = create('div');
+  languageOption.classList.add('options--item');
+
+  const languageText = create('p');
+  languageText.innerText = dictionary.LANGUAGE;
+
+  const select = create('select');
+  select.classList.add('select');
+
+  ['en', 'ru', 'by'].forEach((el) => {
+    const option = create('option');
+    option.value = el;
+    option.innerText = dictionary[`LANG_${el.toUpperCase()}`];
+
+    if (el === variables.lang) option.selected = true;
+
+    select.appendChild(option);
+  })
+
+  select.onchange = (e) => {
+    variables.lang = e.target.value;
+    save({
+      lang: e.target.value,
+    })
+    document.location.reload();
+  }
+
+  append([languageText, select], languageOption);
+
+  return languageOption;
+}
+
 export default function optionsPopup() {
   const options = create('div');
   options.classList.add('options', 'modal');
@@ -59,18 +132,23 @@ export default function optionsPopup() {
   options.appendChild(optionsContent);
 
   const title = create('h2');
-  title.innerText = 'OPTIONS';
+  title.innerText = dictionary.OPTIONS_TITLE;
 
   const cross = create('div');
   cross.classList.add('close-cross');
 
-  optionsContent.appendChild(cross);
-  optionsContent.appendChild(title);
-  optionsContent.appendChild(createSoundsOptions('music', musicIcon, changeMusicVolume));
-  optionsContent.appendChild(createSoundsOptions('sounds', soundsIcon, changeSoundsVolume));
+  append([
+    cross,
+    title,
+    createSoundsOptions('music', musicIcon, changeMusicVolume),
+    createSoundsOptions('sounds', soundsIcon, changeSoundsVolume),
+    createChildModeOption(),
+    createFullscreenOption(),
+    createLanguageSelector(),
+  ], optionsContent);
 
   options.onclick = (e) => {
-    if (e.target.classList.contains(options.className)) {
+    if (e.target.className === options.className) {
       options.remove();
     }
   };
