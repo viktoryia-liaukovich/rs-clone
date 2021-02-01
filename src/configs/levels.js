@@ -91,7 +91,7 @@ export default {
     background: levelOne,
     point: {
       x: 300,
-      y: 100,
+      y: 200,
     },
     time: 30,
     move: 10,
@@ -173,352 +173,7 @@ export default {
     background: levelTwo,
     point: {
       x: 540,
-      y: 200,
-    },
-    time: 30,
-    move: 5,
-
-  },
-  2: {
-    items: [
-      {
-        name: 'Hat',
-        image: Hat,
-        size: {
-          width: 36,
-          height: 21,
-        },
-        pos: {
-          x: 925,
-          y: 510,
-          r: 45,
-        },
-
-      },
-      {
-        name: 'Candle',
-        image: Candle,
-        size: {
-          width: 22,
-          height: 60,
-        },
-        pos: {
-          x: 1080,
-          y: 110,
-          r: 0,
-        },
-        isKey: true,
-      },
-      {
-        name: 'Wreath',
-        image: Wreath,
-        size: {
-          width: 50,
-          height: 30,
-        },
-        pos: {
-          x: 525,
-          y: 430,
-          r: -15,
-        },
-
-      },
-      {
-        name: 'Snowflake',
-        image: Snowflake,
-        size: {
-          width: 68,
-          height: 62,
-        },
-        pos: {
-          x: 970,
-          y: 500,
-          r: 0,
-        },
-
-      },
-
-    ],
-    background: levelTwo,
-    point: {
-      x: 800,
-      y: 335,
-    },
-    time: 30,
-    move: 5,
-
-  },
-  3: {
-    items: [
-      {
-        name: 'Hat',
-        image: Hat,
-        size: {
-          width: 36,
-          height: 21,
-        },
-        pos: {
-          x: 925,
-          y: 510,
-          r: 45,
-        },
-
-      },
-      {
-        name: 'Candle',
-        image: Candle,
-        size: {
-          width: 22,
-          height: 60,
-        },
-        pos: {
-          x: 1080,
-          y: 110,
-          r: 0,
-        },
-        isKey: true,
-      },
-      {
-        name: 'Wreath',
-        image: Wreath,
-        size: {
-          width: 50,
-          height: 30,
-        },
-        pos: {
-          x: 525,
-          y: 430,
-          r: -15,
-        },
-
-      },
-      {
-        name: 'Snowflake',
-        image: Snowflake,
-        size: {
-          width: 68,
-          height: 62,
-        },
-        pos: {
-          x: 970,
-          y: 500,
-          r: 0,
-        },
-
-      },
-
-    ],
-    background: levelTwo,
-    point: {
-      x: 1000,
-      y: 455,
-    },
-    time: 30,
-    move: 5,
-
-  },
-  4: {
-    items: [
-      {
-        name: 'Hat',
-        image: Hat,
-        size: {
-          width: 36,
-          height: 21,
-        },
-        pos: {
-          x: 925,
-          y: 510,
-          r: 45,
-        },
-
-      },
-      {
-        name: 'Candle',
-        image: Candle,
-        size: {
-          width: 22,
-          height: 60,
-        },
-        pos: {
-          x: 1080,
-          y: 110,
-          r: 0,
-        },
-        isKey: true,
-      },
-      {
-        name: 'Wreath',
-        image: Wreath,
-        size: {
-          width: 50,
-          height: 30,
-        },
-        pos: {
-          x: 525,
-          y: 430,
-          r: -15,
-        },
-
-      },
-      {
-        name: 'Snowflake',
-        image: Snowflake,
-        size: {
-          width: 68,
-          height: 62,
-        },
-        pos: {
-          x: 970,
-          y: 500,
-          r: 0,
-        },
-
-      },
-
-    ],
-    background: levelTwo,
-    point: {
-      x: 1200,
-      y: 550,
-    },
-    time: 30,
-    move: 5,
-
-  },
-  5: {
-    items: [
-      {
-        name: 'Hat',
-        image: Hat,
-        size: {
-          width: 36,
-          height: 21,
-        },
-        pos: {
-          x: 925,
-          y: 510,
-          r: 45,
-        },
-
-      },
-      {
-        name: 'Candle',
-        image: Candle,
-        size: {
-          width: 22,
-          height: 60,
-        },
-        pos: {
-          x: 1080,
-          y: 110,
-          r: 0,
-        },
-        isKey: true,
-      },
-      {
-        name: 'Wreath',
-        image: Wreath,
-        size: {
-          width: 50,
-          height: 30,
-        },
-        pos: {
-          x: 525,
-          y: 430,
-          r: -15,
-        },
-
-      },
-      {
-        name: 'Snowflake',
-        image: Snowflake,
-        size: {
-          width: 68,
-          height: 62,
-        },
-        pos: {
-          x: 970,
-          y: 500,
-          r: 0,
-        },
-
-      },
-
-    ],
-    background: levelTwo,
-    point: {
-      x: 1425,
-      y: 495,
-    },
-    time: 30,
-    move: 5,
-
-  },
-  6: {
-    items: [
-      {
-        name: 'Hat',
-        image: Hat,
-        size: {
-          width: 36,
-          height: 21,
-        },
-        pos: {
-          x: 925,
-          y: 510,
-          r: 45,
-        },
-
-      },
-      {
-        name: 'Candle',
-        image: Candle,
-        size: {
-          width: 22,
-          height: 60,
-        },
-        pos: {
-          x: 1080,
-          y: 110,
-          r: 0,
-        },
-        isKey: true,
-      },
-      {
-        name: 'Wreath',
-        image: Wreath,
-        size: {
-          width: 50,
-          height: 30,
-        },
-        pos: {
-          x: 525,
-          y: 430,
-          r: -15,
-        },
-
-      },
-      {
-        name: 'Snowflake',
-        image: Snowflake,
-        size: {
-          width: 68,
-          height: 62,
-        },
-        pos: {
-          x: 970,
-          y: 500,
-          r: 0,
-        },
-
-      },
-
-    ],
-    background: levelTwo,
-    point: {
-      x: 1635,
-      y: 395,
+      y: 300,
     },
     time: 30,
     move: 5,
@@ -615,8 +270,8 @@ export default {
     ],
     background: levelThree,
     point: {
-      x: 500,
-      y: 100,
+      x: 800,
+      y: 435,
     },
     time: 30,
     move: 5,
@@ -684,8 +339,8 @@ export default {
     ],
     background: levelFour,
     point: {
-      x: 700,
-      y: 100,
+      x: 1000,
+      y: 555,
     },
     time: 30,
     move: 5,
@@ -753,8 +408,8 @@ export default {
     ],
     background: levelFive,
     point: {
-      x: 1000,
-      y: 100,
+      x: 1200,
+      y: 650,
     },
     time: 30,
     move: 5,
@@ -822,8 +477,8 @@ export default {
     ],
     background: levelSix,
     point: {
-      x: 1200,
-      y: 100,
+      x: 1425,
+      y: 595,
     },
     time: 30,
     move: 5,

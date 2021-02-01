@@ -1,9 +1,9 @@
-import loader1 from '../assets/loader/1.jpg';
-import loader2 from '../assets/loader/2.jpg';
-import loader3 from '../assets/loader/3.jpg';
-import loader4 from '../assets/loader/4.jpg';
-import loader5 from '../assets/loader/5.jpg';
-import loader6 from '../assets/loader/6.jpg';
+import loader1 from '../assets/loader/loader_1.jpg';
+import loader2 from '../assets/loader/loader_2.jpg';
+import loader3 from '../assets/loader/loader_3.jpg';
+import loader4 from '../assets/loader/loader_4.jpg';
+import loader5 from '../assets/loader/loader_5.jpg';
+import loader6 from '../assets/loader/loader_6.jpg';
 
 export default {
   0: {
