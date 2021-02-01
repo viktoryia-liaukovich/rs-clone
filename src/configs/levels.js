@@ -4,14 +4,27 @@ import Brush from '../assets/items/brush.png';
 import Egg from '../assets/items/egg.png';
 import Palette from '../assets/items/palette.png';
 
-import levelTwo from '../assets/backgrounds/6.jpg';
-import levelThree from '../assets/backgrounds/27.jpg';
+import levelTwo from '../assets/backgrounds/2.jpg';
+import Bucket from '../assets/items/bucket.png';
+import Unicorn from '../assets/items/unicorn.png';
+import Plane from '../assets/items/plane.png';
+import Shovel from '../assets/items/shovel.png';
+import Candle from '../assets/items/candle.png';
+
+import levelThree from '../assets/backgrounds/3.jpg';
+import Box from '../assets/items/box.png';
+import Fairy from '../assets/items/fairy.png';
+import Rainbow from '../assets/items/rainbow.png';
+import Tooth from '../assets/items/tooth.png';
+import Toothbrush from '../assets/items/toothbrush.png';
+import Coin from '../assets/items/coin.png';
+
 import levelFour from '../assets/backgrounds/28.jpg';
 import levelFive from '../assets/backgrounds/19.jpg';
 import levelSix from '../assets/backgrounds/10.jpg';
 import Hat from '../assets/items/hat.png';
 import Wreath from '../assets/items/wreath.png';
-import Candle from '../assets/items/candle.png';
+
 import Snowflake from '../assets/items/snowflake.png';
 
 export default {
@@ -86,16 +99,58 @@ export default {
   1: {
     items: [
       {
-        name: 'Hat',
-        image: Hat,
+        name: 'Bucket',
+        image: Bucket,
         size: {
-          width: 36,
-          height: 21,
+          width: 70,
+          height: 100,
         },
         pos: {
-          x: 925,
-          y: 510,
+          x: 225,
+          y: 910,
           r: 45,
+        },
+
+      },
+      {
+        name: 'Unicorn',
+        image: Unicorn,
+        size: {
+          width: 50,
+          height: 40,
+        },
+        pos: {
+          x: 880,
+          y: 580,
+          r: 0,
+        },
+        isKey: true,
+      },
+      {
+        name: 'Plane',
+        image: Plane,
+        size: {
+          width: 50,
+          height: 30,
+        },
+        pos: {
+          x: 1555,
+          y: 230,
+          r: -15,
+        },
+
+      },
+      {
+        name: 'Shovel',
+        image: Shovel,
+        size: {
+          width: 18,
+          height: 62,
+        },
+        pos: {
+          x: 570,
+          y: 400,
+          r: 0,
         },
 
       },
@@ -107,39 +162,11 @@ export default {
           height: 60,
         },
         pos: {
-          x: 1080,
-          y: 110,
+          x: 1850,
+          y: 310,
           r: 0,
         },
         isKey: true,
-      },
-      {
-        name: 'Wreath',
-        image: Wreath,
-        size: {
-          width: 50,
-          height: 30,
-        },
-        pos: {
-          x: 525,
-          y: 430,
-          r: -15,
-        },
-
-      },
-      {
-        name: 'Snowflake',
-        image: Snowflake,
-        size: {
-          width: 68,
-          height: 62,
-        },
-        pos: {
-          x: 970,
-          y: 500,
-          r: 0,
-        },
-
       },
 
     ],
@@ -500,58 +527,87 @@ export default {
   2: {
     items: [
       {
-        name: 'Hat',
-        image: Hat,
+        name: 'Coin',
+        image: Coin,
         size: {
           width: 36,
           height: 21,
         },
         pos: {
-          x: 925,
-          y: 510,
+          x: 255,
+          y: 610,
           r: 45,
         },
         isKey: false,
       },
       {
-        name: 'Candle',
-        image: Candle,
+        name: 'Box',
+        image: Box,
         size: {
-          width: 22,
-          height: 60,
+          width: 15,
+          height: 50,
         },
         pos: {
-          x: 1080,
-          y: 110,
+          x: 855,
+          y: 310,
           r: 0,
-        },
-        isKey: true,
-      },
-      {
-        name: 'Wreath',
-        image: Wreath,
-        size: {
-          width: 50,
-          height: 30,
-        },
-        pos: {
-          x: 525,
-          y: 430,
-          r: -15,
         },
         isKey: false,
       },
       {
-        name: 'Snowflake',
-        image: Snowflake,
+        name: 'Fairy',
+        image: Fairy,
+        size: {
+          width: 60,
+          height: 80,
+        },
+        pos: {
+          x: 1080,
+          y: 810,
+          r: 0,
+        },
+        isKey: true,
+      },
+
+      {
+        name: 'Rainbow',
+        image: Rainbow,
         size: {
           width: 68,
           height: 62,
         },
         pos: {
-          x: 970,
-          y: 500,
+          x: 1200,
+          y: 700,
+          r: 45,
+        },
+        isKey: false,
+      },
+      {
+        name: 'Tooth',
+        image: Tooth,
+        size: {
+          width: 18,
+          height: 32,
+        },
+        pos: {
+          x: 1350,
+          y: 900,
           r: 0,
+        },
+        isKey: false,
+      },
+      {
+        name: 'Toothbrush',
+        image: Toothbrush,
+        size: {
+          width: 32,
+          height: 68,
+        },
+        pos: {
+          x: 536,
+          y: 250,
+          r: -45,
         },
         isKey: false,
       },
