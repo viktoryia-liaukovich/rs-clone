@@ -1,66 +1,13 @@
-import jack from '../assets/characters/jack.png';
-import bunny from '../assets/characters/bunny.png';
-import sandy from '../assets/characters/sandy.png';
+import variables from '../global/variables';
+import { load } from '../utils/saveSystem';
+import phrases_en from './phrases/phrases_en';
+import phrases_ru from './phrases/phrases_ru';
+import phrases_by from './phrases/phrases_by';
 
-export default {
-  map: [
-    {
-      img: jack,
-      title: 'Jack',
-      text: 'I am Jack',
-      answer: 'Hello!',
-    },
-    {
-      img: sandy,
-      title: 'Sandyman',
-      text: 'We will guide yout through your journey! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet imperdiet justo.',
-      answer: 'Continue',
-    },
-    {
-      img: jack,
-      title: 'Jack',
-      text: 'Phasellus vel quam quis tellus gravida consectetur sit amet quis metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim est, laoreet nec rutrum in, semper vitae arcu.',
-      answer: 'START',
-    },
-  ],
-  0: [
-    {
-      img: jack,
-      title: 'Jack',
-      text: 'I am Jack',
-      answer: 'Hello!',
-    },
-    {
-      img: sandy,
-      title: 'Sandyman',
-      text: 'We will guide yout through your journey! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet imperdiet justo.',
-      answer: 'Continue',
-    },
-    {
-      img: jack,
-      title: 'Jack',
-      text: 'Phasellus vel quam quis tellus gravida consectetur sit amet quis metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim est, laoreet nec rutrum in, semper vitae arcu.',
-      answer: 'START',
-    },
-  ],
-  1: [
-    {
-      img: bunny,
-      title: 'Easter Bunny',
-      text: 'Hi! I am Easter Bunny!',
-      answer: 'Good to see you!',
-    },
-    {
-      img: sandy,
-      title: 'Sandyman',
-      text: 'We will guide yout through your journey! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet imperdiet justo.',
-      answer: 'Ok',
-    },
-    {
-      img: sandy,
-      title: 'Sandyman',
-      text: 'Phasellus vel quam quis tellus gravida consectetur sit amet quis metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim est, laoreet nec rutrum in, semper vitae arcu.',
-      answer: 'START',
-    },
-  ],
+const langMap = {
+  en: phrases_en,
+  ru: phrases_ru,
+  by: phrases_by,
 };
+
+export default langMap[(load() && load().lang) || variables.lang];

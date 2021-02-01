@@ -8,12 +8,17 @@
   background: black;
   z-index: 99;
   color: $color-text-light;
-  transition-duration: 1s;
+  transition: 2s ease-in-out;
+  background-position-y: 100px;
 
   font-size: 20px;
 
   background-size: cover;
   background-repeat: no-repeat;
+
+  &--moved {
+    background-position-y: -100px;
+  }
 
   &.fade {
     opacity: 0;
