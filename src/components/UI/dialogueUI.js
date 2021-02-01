@@ -3,10 +3,9 @@ import variables from '../../global/variables';
 import { $ } from '../../utils/utils';
 import dialog from '../dialog';
 
-export default function dialogueUI(options, item) {
-  let dialogEl = null;
+export default function dialogueUI(options) {
+  const config = phrases[variables.currentLevel];
 
-  const config = phrases[item || variables.currentLevel];
-
-  dialogEl = $('#root').appendChild(dialog(config, options));
+  const dialogWrapper = dialog(config, options);
+  dialogWrapper && $('#root').appendChild(dialogWrapper);
 }

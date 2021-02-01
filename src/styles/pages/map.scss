@@ -1,12 +1,14 @@
 .map {
   height: 100vh;
-  background: url('./assets/backgrounds/map.png');
   background-size: cover;
   background-position-y: -100px;
 
   .marker {
     position: absolute;
-    height: 60px;
+    height: 40px;
+    margin-left: 10px;
+    margin-top: 20px;
+
     cursor: $cursor-pointer;
     @include animation('jump 2s infinite');
     animation-play-state: paused;
@@ -19,6 +21,8 @@
     }
 
     &.current {
+      height: 60px;
+      margin: 0;
       animation-play-state: running;
     }
   }

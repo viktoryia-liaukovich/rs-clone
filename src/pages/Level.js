@@ -1,6 +1,6 @@
 import Konva from 'konva';
 import { playUI, updateTable, updateMoves } from '../components/UI/playUI';
-import { $ } from '../utils/utils';
+import { $, fadeRoot } from '../utils/utils';
 import levels from '../configs/levels';
 import variables from '../global/variables';
 import popup from '../components/popup';
@@ -17,7 +17,7 @@ const canvasOptions = {
   height: window.innerHeight,
 };
 
-export default function Level(config, i) {
+export default function Level(config) {
   const {
     items, background, time, move,
   } = config;
@@ -93,19 +93,22 @@ export default function Level(config, i) {
             const nextLevel = variables.currentLevel + 1;
 
             if (levels[nextLevel]) {
-              variables.currentLevel = nextLevel;
-
-              save({
-                currentLevel: variables.currentLevel,
-              });
+              if (variables.lastLevel < nextLevel) {
+                variables.lastLevel = nextLevel;
+                save({
+                  lastLevel: nextLevel
+                })
+              }
 
               popup({
                 title: dictionary.LEVEL_WON_TITLE,
                 buttonText: dictionary.NEXT_LEVEL,
                 image: Won,
                 callback: () => {
-                  $('#root').innerHTML = '';
-                  $('#root').appendChild(Map());
+                  fadeRoot(() => {
+                    $('#root').innerHTML = '';
+                    $('#root').appendChild(Map());
+                  })
                 },
               });
             } else {
@@ -131,7 +134,7 @@ export default function Level(config, i) {
 
   dialogueUI({
     levelItems, move, time, itemsLayer,
-  }, i);
+  });
 
   variables.isGameInProgress = true;
 }

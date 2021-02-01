@@ -68,7 +68,7 @@ export default {
     ],
     background: levelOne,
     point: {
-      x: 100,
+      x: 300,
       y: 100,
     },
     time: 30,
@@ -136,8 +136,353 @@ export default {
     ],
     background: levelTwo,
     point: {
-      x: 300,
-      y: 100,
+      x: 540,
+      y: 200,
+    },
+    time: 30,
+    move: 5,
+
+  },
+  2: {
+    items: [
+      {
+        name: 'Hat',
+        image: Hat,
+        size: {
+          width: 36,
+          height: 21,
+        },
+        pos: {
+          x: 925,
+          y: 510,
+          r: 45,
+        },
+
+      },
+      {
+        name: 'Candle',
+        image: Candle,
+        size: {
+          width: 22,
+          height: 60,
+        },
+        pos: {
+          x: 1080,
+          y: 110,
+          r: 0,
+        },
+        isKey: true,
+      },
+      {
+        name: 'Wreath',
+        image: Wreath,
+        size: {
+          width: 50,
+          height: 30,
+        },
+        pos: {
+          x: 525,
+          y: 430,
+          r: -15,
+        },
+
+      },
+      {
+        name: 'Snowflake',
+        image: Snowflake,
+        size: {
+          width: 68,
+          height: 62,
+        },
+        pos: {
+          x: 970,
+          y: 500,
+          r: 0,
+        },
+
+      },
+
+    ],
+    background: levelTwo,
+    point: {
+      x: 800,
+      y: 335,
+    },
+    time: 30,
+    move: 5,
+
+  },
+  3: {
+    items: [
+      {
+        name: 'Hat',
+        image: Hat,
+        size: {
+          width: 36,
+          height: 21,
+        },
+        pos: {
+          x: 925,
+          y: 510,
+          r: 45,
+        },
+
+      },
+      {
+        name: 'Candle',
+        image: Candle,
+        size: {
+          width: 22,
+          height: 60,
+        },
+        pos: {
+          x: 1080,
+          y: 110,
+          r: 0,
+        },
+        isKey: true,
+      },
+      {
+        name: 'Wreath',
+        image: Wreath,
+        size: {
+          width: 50,
+          height: 30,
+        },
+        pos: {
+          x: 525,
+          y: 430,
+          r: -15,
+        },
+
+      },
+      {
+        name: 'Snowflake',
+        image: Snowflake,
+        size: {
+          width: 68,
+          height: 62,
+        },
+        pos: {
+          x: 970,
+          y: 500,
+          r: 0,
+        },
+
+      },
+
+    ],
+    background: levelTwo,
+    point: {
+      x: 1000,
+      y: 455,
+    },
+    time: 30,
+    move: 5,
+
+  },
+  4: {
+    items: [
+      {
+        name: 'Hat',
+        image: Hat,
+        size: {
+          width: 36,
+          height: 21,
+        },
+        pos: {
+          x: 925,
+          y: 510,
+          r: 45,
+        },
+
+      },
+      {
+        name: 'Candle',
+        image: Candle,
+        size: {
+          width: 22,
+          height: 60,
+        },
+        pos: {
+          x: 1080,
+          y: 110,
+          r: 0,
+        },
+        isKey: true,
+      },
+      {
+        name: 'Wreath',
+        image: Wreath,
+        size: {
+          width: 50,
+          height: 30,
+        },
+        pos: {
+          x: 525,
+          y: 430,
+          r: -15,
+        },
+
+      },
+      {
+        name: 'Snowflake',
+        image: Snowflake,
+        size: {
+          width: 68,
+          height: 62,
+        },
+        pos: {
+          x: 970,
+          y: 500,
+          r: 0,
+        },
+
+      },
+
+    ],
+    background: levelTwo,
+    point: {
+      x: 1200,
+      y: 550,
+    },
+    time: 30,
+    move: 5,
+
+  },
+  5: {
+    items: [
+      {
+        name: 'Hat',
+        image: Hat,
+        size: {
+          width: 36,
+          height: 21,
+        },
+        pos: {
+          x: 925,
+          y: 510,
+          r: 45,
+        },
+
+      },
+      {
+        name: 'Candle',
+        image: Candle,
+        size: {
+          width: 22,
+          height: 60,
+        },
+        pos: {
+          x: 1080,
+          y: 110,
+          r: 0,
+        },
+        isKey: true,
+      },
+      {
+        name: 'Wreath',
+        image: Wreath,
+        size: {
+          width: 50,
+          height: 30,
+        },
+        pos: {
+          x: 525,
+          y: 430,
+          r: -15,
+        },
+
+      },
+      {
+        name: 'Snowflake',
+        image: Snowflake,
+        size: {
+          width: 68,
+          height: 62,
+        },
+        pos: {
+          x: 970,
+          y: 500,
+          r: 0,
+        },
+
+      },
+
+    ],
+    background: levelTwo,
+    point: {
+      x: 1425,
+      y: 495,
+    },
+    time: 30,
+    move: 5,
+
+  },
+  6: {
+    items: [
+      {
+        name: 'Hat',
+        image: Hat,
+        size: {
+          width: 36,
+          height: 21,
+        },
+        pos: {
+          x: 925,
+          y: 510,
+          r: 45,
+        },
+
+      },
+      {
+        name: 'Candle',
+        image: Candle,
+        size: {
+          width: 22,
+          height: 60,
+        },
+        pos: {
+          x: 1080,
+          y: 110,
+          r: 0,
+        },
+        isKey: true,
+      },
+      {
+        name: 'Wreath',
+        image: Wreath,
+        size: {
+          width: 50,
+          height: 30,
+        },
+        pos: {
+          x: 525,
+          y: 430,
+          r: -15,
+        },
+
+      },
+      {
+        name: 'Snowflake',
+        image: Snowflake,
+        size: {
+          width: 68,
+          height: 62,
+        },
+        pos: {
+          x: 970,
+          y: 500,
+          r: 0,
+        },
+
+      },
+
+    ],
+    background: levelTwo,
+    point: {
+      x: 1635,
+      y: 395,
     },
     time: 30,
     move: 5,

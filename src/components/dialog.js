@@ -3,6 +3,12 @@ import { playUI } from './UI/playUI';
 
 export default function dialog(config, options) {
   let currentPhrase = 0;
+
+  if (!config) {
+    playUI(options);
+    return;
+  }
+
   const {
     img, title, text, answer,
   } = config[currentPhrase];

@@ -18,6 +18,7 @@ export function setDefault() {
     lang: 'en',
     isDialogFinished: false,
     currentLevel: 0,
+    lastLevel: 0,
   });
 }
 

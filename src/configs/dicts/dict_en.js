@@ -17,7 +17,6 @@ export default {
   HINT: 'HINT',
   RESTART: 'Restart',
   MENU: 'Main menu',
-  LOAD: 'Load game',
   LEVEL_WON_TITLE: 'You won!',
   NEXT_LEVEL: 'To the map',
   LANGUAGE: 'Language',
