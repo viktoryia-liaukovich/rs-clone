@@ -1,4 +1,4 @@
-import variables from "../global/variables";
+import variables from '../global/variables';
 
 export function save(data = {}) {
   const savedGame = JSON.parse(localStorage.getItem('game save 1'));
@@ -18,12 +18,12 @@ export function setDefault() {
     lang: 'en',
     isDialogFinished: false,
     currentLevel: 0,
-  })
+  });
 }
 
 export function parseSave() {
   const save = load();
-  Object.keys(save).forEach(key => {
+  Object.keys(save).forEach((key) => {
     variables[key] = save[key];
-  })
+  });
 }

@@ -1,4 +1,4 @@
-import { $, create } from '../utils/utils';
+import { $, create, fadeRoot } from '../utils/utils';
 import config from '../configs/levels';
 import Level from './Level';
 import pageLoader from './Loader';
@@ -11,12 +11,12 @@ export default function Map() {
   const mapWrapper = create('div');
   mapWrapper.classList.add('map');
 
-  if (!variables.isDialogFinished)  {
+  if (!variables.isDialogFinished) {
     dialogueUI(() => {
       variables.isDialogFinished = true;
-      save ({
+      save({
         isDialogFinished: variables.isDialogFinished,
-      })
+      });
     }, 'map');
   }
 
@@ -37,11 +37,11 @@ export default function Map() {
     mapWrapper.appendChild(marker);
 
     marker.addEventListener('click', () => {
-      $('#root').innerHTML = '';
-
-      Level(config[i]);
-
-      $('#root').appendChild(pageLoader());
+      fadeRoot(() => {
+        $('#root').innerHTML = '';
+        Level(config[i], i);
+        $('#root').appendChild(pageLoader());
+      });
     });
   });
 

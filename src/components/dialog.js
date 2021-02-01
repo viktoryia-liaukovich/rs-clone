@@ -3,7 +3,9 @@ import { playUI } from './UI/playUI';
 
 export default function dialog(config, options) {
   let currentPhrase = 0;
-  const { img, title, text, answer } = config[currentPhrase];
+  const {
+    img, title, text, answer,
+  } = config[currentPhrase];
 
   const blur = create('div');
   blur.classList.add('dialog-blur');
@@ -49,7 +51,7 @@ export default function dialog(config, options) {
         options();
       } else playUI(options);
     }
-  }
+  };
 
   button.onclick = actionHandler;
 

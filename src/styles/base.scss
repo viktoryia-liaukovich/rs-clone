@@ -6,9 +6,30 @@
     cursor: $cursor-default;
 }
 
+body {
+    background-color: $color-bg-body;
+}
+
 #root {
     height: 100vh;
-    background-color: $color-bg-main;
+    opacity: 1;
+
+    &.hidden {
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 90;
+            background: black;
+        }
+    }
+
+    &.fade {
+        opacity: 0;
+    }
 }
 
 canvas {

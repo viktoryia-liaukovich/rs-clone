@@ -17,7 +17,7 @@ const canvasOptions = {
   height: window.innerHeight,
 };
 
-export default function Level(config) {
+export default function Level(config, i) {
   const {
     items, background, time, move,
   } = config;
@@ -97,7 +97,7 @@ export default function Level(config) {
 
               save({
                 currentLevel: variables.currentLevel,
-              })
+              });
 
               popup({
                 title: dictionary.LEVEL_WON_TITLE,
@@ -131,7 +131,7 @@ export default function Level(config) {
 
   dialogueUI({
     levelItems, move, time, itemsLayer,
-  });
+  }, i);
 
   variables.isGameInProgress = true;
 }

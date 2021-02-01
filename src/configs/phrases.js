@@ -20,8 +20,8 @@ export default {
       img: jack,
       title: 'Jack',
       text: 'Phasellus vel quam quis tellus gravida consectetur sit amet quis metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim est, laoreet nec rutrum in, semper vitae arcu.',
-      answer: "START",
-    }
+      answer: 'START',
+    },
   ],
   0: [
     {
@@ -40,8 +40,8 @@ export default {
       img: jack,
       title: 'Jack',
       text: 'Phasellus vel quam quis tellus gravida consectetur sit amet quis metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim est, laoreet nec rutrum in, semper vitae arcu.',
-      answer: "START",
-    }
+      answer: 'START',
+    },
   ],
   1: [
     {
@@ -60,7 +60,7 @@ export default {
       img: sandy,
       title: 'Sandyman',
       text: 'Phasellus vel quam quis tellus gravida consectetur sit amet quis metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim est, laoreet nec rutrum in, semper vitae arcu.',
-      answer: "START",
-    }
+      answer: 'START',
+    },
   ],
-}
+};

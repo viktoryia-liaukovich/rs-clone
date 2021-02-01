@@ -62,7 +62,7 @@ function createChildModeOption() {
 
   append([childModeText, mode('childMode', () => {
     variables.childMode = !variables.childMode;
-    save ({
+    save({
       childMode: variables.childMode,
     });
   })], childModeOptions);
@@ -78,7 +78,7 @@ function toggleFullScreen() {
   }
 }
 
-function createFullscreenOption(){
+function createFullscreenOption() {
   const fullScreenOption = create('div');
   fullScreenOption.classList.add('options--item');
 
@@ -108,15 +108,15 @@ function createLanguageSelector() {
     if (el === variables.lang) option.selected = true;
 
     select.appendChild(option);
-  })
+  });
 
   select.onchange = (e) => {
     variables.lang = e.target.value;
     save({
       lang: e.target.value,
-    })
+    });
     document.location.reload();
-  }
+  };
 
   append([languageText, select], languageOption);
 
