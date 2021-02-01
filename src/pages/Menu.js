@@ -1,5 +1,5 @@
 import optionsPopup from '../components/optionsPopup';
-import { $, append, create } from '../utils/utils';
+import { $, append, create, fadeRoot } from '../utils/utils';
 import Map from './Map';
 import dictionary from '../configs/dictionary';
 import { save } from '../utils/saveSystem';
@@ -52,6 +52,11 @@ export default function Menu() {
   nav.addEventListener('click', (e) => {
     switch (e.target.textContent) {
     case menuConfig.NEW_GAME: {
+      fadeRoot(() => {
+        $('#root').innerHTML = '';
+        $('#root').appendChild(Map());
+      });
+
       save({
         currentLevel: 0,
         isDialogFinished: false,
@@ -60,13 +65,13 @@ export default function Menu() {
       variables.currentLevel = 0;
       variables.isDialogFinished = false;
 
-      $('#root').innerHTML = '';
-      $('#root').appendChild(Map());
       break;
     }
     case menuConfig.CONTINUE: {
-      $('#root').innerHTML = '';
-      $('#root').appendChild(Map());
+      fadeRoot(() => {
+        $('#root').innerHTML = '';
+        $('#root').appendChild(Map());
+      });
       break;
     }
     case menuConfig.OPTIONS: {
