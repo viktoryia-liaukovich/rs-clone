@@ -1,4 +1,9 @@
-import levelOne from '../assets/backgrounds/11.jpg';
+import levelOne from '../assets/backgrounds/1.png';
+import Basket from '../assets/items/basket.png';
+import Brush from '../assets/items/brush.png';
+import Egg from '../assets/items/egg.png';
+import Palette from '../assets/items/palette.png';
+
 import levelTwo from '../assets/backgrounds/6.jpg';
 import levelThree from '../assets/backgrounds/27.jpg';
 import levelFour from '../assets/backgrounds/28.jpg';
@@ -13,58 +18,58 @@ export default {
   0: {
     items: [
       {
-        name: 'Hat',
-        image: Hat,
+        name: 'Brush',
+        image: Brush,
         size: {
-          width: 36,
-          height: 21,
+          width: 40,
+          height: 40,
         },
         pos: {
-          x: 925,
-          y: 510,
+          x: 325,
+          y: 210,
           r: 45,
         },
-
+        isKey: true,
       },
       {
-        name: 'Candle',
-        image: Candle,
+        name: 'Basket',
+        image: Basket,
         size: {
-          width: 22,
-          height: 60,
+          width: 40,
+          height: 32,
         },
         pos: {
-          x: 1080,
-          y: 110,
+          x: 1110,
+          y: 810,
           r: 0,
         },
 
       },
       {
-        name: 'Wreath',
-        image: Wreath,
+        name: 'Egg',
+        image: Egg,
         size: {
-          width: 50,
-          height: 30,
+          width: 117,
+          height: 200,
         },
         pos: {
           x: 525,
           y: 430,
           r: -15,
         },
-        isKey: true,
+
       },
       {
-        name: 'Snowflake',
-        image: Snowflake,
+        name: 'Palette',
+        image: Palette,
         size: {
-          width: 68,
-          height: 62,
+          width: 58,
+          height: 52,
         },
         pos: {
-          x: 970,
-          y: 300,
-          r: 0,
+          x: 1500,
+          y: 450,
+          r: -50,
         },
 
       },
