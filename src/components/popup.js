@@ -10,7 +10,6 @@ const popupButtons = {
   RESTART: dictionary.RESTART,
   MENU: dictionary.MENU,
   OPTIONS: dictionary.OPTIONS,
-  LOAD: dictionary.LOAD,
 };
 
 export default function popup({
@@ -58,9 +57,6 @@ export default function popup({
     }
     case popupButtons.OPTIONS: {
       $('#root').appendChild(optionsPopup());
-      break;
-    }
-    case popupButtons.LOAD: {
       break;
     }
     case popupButtons.RESTART: {

@@ -17,7 +17,6 @@ export default {
   HINT: 'ПАДКАЗКА',
   RESTART: 'Пачаць нанова',
   MENU: 'У галоўнае меню',
-  LOAD: 'Загрузіць гульню',
   LEVEL_WON_TITLE: 'Вы перамаглі!',
   NEXT_LEVEL: 'Да карты',
   LANGUAGE: 'Мова',

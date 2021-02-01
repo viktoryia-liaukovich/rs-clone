@@ -1,5 +1,6 @@
 const variables = {
   currentLevel: 0,
+  lastLevel: 0,
   timerId: 0,
   childMode: false,
   isGameInProgress: true,

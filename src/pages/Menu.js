@@ -41,7 +41,7 @@ export default function Menu() {
   Object.values(menuConfig).forEach((el) => {
     const li = create('li');
 
-    if (el === menuConfig.CONTINUE && variables.currentLevel === 0) {
+    if (el === menuConfig.CONTINUE && variables.lastLevel === 0) {
       li.classList.add('disabled');
     }
 
@@ -58,11 +58,11 @@ export default function Menu() {
       });
 
       save({
-        currentLevel: 0,
+        lastLevel: 0,
         isDialogFinished: false,
       });
 
-      variables.currentLevel = 0;
+      variables.lastLevel = 0;
       variables.isDialogFinished = false;
 
       break;

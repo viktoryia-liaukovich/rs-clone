@@ -17,7 +17,6 @@ export default {
   HINT: 'ПОДСКАЗКА',
   RESTART: 'Начать заново',
   MENU: 'В главное меню',
-  LOAD: 'Загрузить игру',
   LEVEL_WON_TITLE: 'Вы победили!',
   NEXT_LEVEL: 'К карте',
   LANGUAGE: 'Язык',
