@@ -9,6 +9,7 @@ import pageLoader from './Loader';
 import markerIcon from '../assets/UI/location-pin.png';
 import button from '../components/button';
 import Menu from './Menu';
+import dictionary from '../configs/dictionary';
 
 export default function Map() {
   const mapWrapper = create('div');
@@ -52,12 +53,12 @@ export default function Map() {
     });
   });
 
-  mapWrapper.appendChild(button('to the menu', () => {
+  mapWrapper.appendChild(button(dictionary.BACK_TO_MENU, () => {
     fadeRoot(() => {
       $('#root').innerHTML = '';
       $('#root').appendChild(Menu());
     });
-  }));
+  }, 'menu'));
 
   return mapWrapper;
 }

@@ -11,6 +11,7 @@ export default {
   OPTIONS_FULLSCREEN: 'Ва ўвесь экран (F11)',
   LOADING: 'Загрузка',
   PAUSE: 'Паўза',
+  BACK_TO_MENU: 'Назад у меню',
   PAUSE_MESSAGE: 'Гульня прыпынена!',
   LOST_MESSAGE: 'Гульня скончана! Час выйшаў!',
   LOST_MESSAGE_MOVES: 'Гульня скончана! Скончыліся хады!',

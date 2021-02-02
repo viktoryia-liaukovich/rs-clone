@@ -13,8 +13,8 @@ import { save } from '../utils/saveSystem';
 import Map from './Map';
 
 const canvasOptions = {
-  width: window.innerWidth,
-  height: window.innerHeight,
+  width: 1920,
+  height: 1080,
 };
 
 export default function Level(config) {

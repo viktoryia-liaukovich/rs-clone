@@ -11,6 +11,7 @@
   &:hover {
     cursor: $cursor-pointer;
     border-color: $color-focus;
+    filter: drop-shadow(0px 2px 10px $color-text-dark);
   }
 
   &_accept {
@@ -23,13 +24,44 @@
 
   &_hint {
     position: absolute;
-    right: 0;
-    top: 130px;
+    right: 10px;
+    top: 190px;
+
+    width: 64px;
+    height: 64px;
+    border: none;
+    border-radius: 50%;
+
+    font-size: 0;
+    background-image: url('./assets/UI/hint.png');
   }
 
   &_pause {
     position: absolute;
-    right: 0;
-    top: 81px;
+    right: 10px;
+    top: 110px;
+
+    width: 64px;
+    height: 64px;
+    border: none;
+    border-radius: 50%;
+
+    font-size: 0;
+    background-image: url('./assets/UI/pause.png');
+  }
+
+  &_menu {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+
+    width: 64px;
+    height: 64px;
+
+    border: none;
+    border-radius: 50%;
+
+    font-size: 0;
+    background-image: url('./assets/UI/back.png');
   }
 }
