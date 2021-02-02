@@ -7,6 +7,8 @@ import dialogueUI from '../components/UI/dialogueUI';
 import Level from './Level';
 import pageLoader from './Loader';
 import markerIcon from '../assets/UI/location-pin.png';
+import button from '../components/button';
+import Menu from './Menu';
 
 export default function Map() {
   const mapWrapper = create('div');
@@ -49,6 +51,13 @@ export default function Map() {
       });
     });
   });
+
+  mapWrapper.appendChild(button('to the menu', () => {
+    fadeRoot(() => {
+      $('#root').innerHTML = '';
+      $('#root').appendChild(Menu());
+    });
+  }));
 
   return mapWrapper;
 }
