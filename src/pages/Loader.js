@@ -2,10 +2,13 @@ import dictionary from '../configs/dictionary';
 import { append, create } from '../utils/utils';
 import loaders from '../configs/loaders';
 import loaderImg from '../assets/UI/loader.png';
+import variables from '../global/variables';
 
 export default function pageLoader() {
   const loader = create('div');
   loader.classList.add('loader');
+
+  setTimeout(() => loader.classList.add('loader--moved'), 0);
 
   const rand = Math.floor(Math.random() * (Object.keys(loaders).length));
 
@@ -13,7 +16,7 @@ export default function pageLoader() {
 
   const loaderQuote = create('p');
   loaderQuote.classList.add('loader--quote');
-  loaderQuote.innerText = loaders[rand].text;
+  loaderQuote.innerText = loaders[rand].text[variables.lang];
 
   const loaderSpinner = create('div');
   loaderSpinner.classList.add('loader--spinner');

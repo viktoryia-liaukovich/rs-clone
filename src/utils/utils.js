@@ -4,14 +4,14 @@ export const append = (elements, parent) => elements.forEach((element) => parent
 
 export const fadeRoot = (callback) => {
   $('#root').classList.add('fade');
-  setTimeout(() => $('#root').classList.remove('fade'), 500);
 
   if (callback) {
     const render = () => {
-      callback();
       $('#root').removeEventListener('transitionend', render);
+      callback();
     }
     $('#root').addEventListener('transitionend', render);
   }
 
+  setTimeout(() => $('#root').classList.remove('fade'), 500);
 }

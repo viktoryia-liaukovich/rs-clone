@@ -3,7 +3,7 @@ import levels from '../configs/levels';
 import variables from '../global/variables';
 import Level from '../pages/Level';
 import Menu from '../pages/Menu';
-import { $, create } from '../utils/utils';
+import { $, create, fadeRoot } from '../utils/utils';
 import optionsPopup from './optionsPopup';
 
 const popupButtons = {
@@ -51,8 +51,10 @@ export default function popup({
   popupText.addEventListener('click', (e) => {
     switch (e.target.innerText) {
     case popupButtons.MENU: {
-      $('#root').innerHTML = '';
-      $('#root').appendChild(Menu());
+      fadeRoot(() => {
+        $('#root').innerHTML = '';
+        $('#root').appendChild(Menu());
+      })
       break;
     }
     case popupButtons.OPTIONS: {
@@ -60,9 +62,11 @@ export default function popup({
       break;
     }
     case popupButtons.RESTART: {
-      $('#root').removeChild(pagePopup);
-      $('#root').innerHTML = '';
-      Level(levels[variables.currentLevel]);
+      fadeRoot(() => {
+        $('#root').removeChild(pagePopup);
+        $('#root').innerHTML = '';
+        Level(levels[variables.currentLevel]);
+      });
       break;
     }
     }
