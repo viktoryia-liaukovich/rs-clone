@@ -1,6 +1,6 @@
 import { create } from '../utils/utils';
 import popup from './popup';
-import Pause from '../assets/popup/pause.gif';
+import playImg from '../assets/UI/play.png';
 import variables from '../global/variables';
 import dictionary from '../configs/dictionary';
 import button from './button';
@@ -10,7 +10,7 @@ export default function pauseGame() {
     popup({
       title: dictionary.PAUSE_MESSAGE,
       buttonText: dictionary.CONTINUE,
-      image: Pause,
+      image: playImg,
       callback: () => {
         variables.isGameInProgress = !variables.isGameInProgress;
       },

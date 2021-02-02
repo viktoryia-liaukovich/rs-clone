@@ -7,11 +7,12 @@
   font-size: 24px;
   font-weight: 700;
   backdrop-filter: blur(10px);
+  transform-origin: center;
 
   &:hover {
     cursor: $cursor-pointer;
     border-color: $color-focus;
-    filter: drop-shadow(0px 2px 10px $color-text-dark);
+    transform: scale(1.2);
   }
 
   &_accept {

@@ -1,14 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
-
 .table {
   position: absolute;
   bottom: 0;
   height: 110px;
   width: 800px;
   left: calc(50% - 400px);
-  background-image: url('./assets/UI/table.png');
   background-size: cover;
-  padding: 15px 30px 0;
+  padding: 25px 30px 0;
+  border: 3px solid white;
+  border-bottom: none;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  backdrop-filter: blur(10px);
+  color: white;
+  font-weight: 800;
+  background: linear-gradient(0deg, rgba(20, 20, 20, 0.9), transparent);
 
   ul {
     display: flex;
@@ -27,8 +32,9 @@
     font-family: 'Josefin Sans', sans-serif;
     font-size: 24px;
   }
+
  .key{
-   color: #2e6a9e;
+   color: $color-focus;
    font-size: 30px;
  }
 }

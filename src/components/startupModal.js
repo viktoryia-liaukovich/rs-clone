@@ -22,12 +22,15 @@ export default function startupModal() {
     changeMusicVolume(load().music);
     changeSoundsVolume(load().sounds);
     playMenuMusic();
-    modal.remove();
+    modal.classList.add('fade');
+    setTimeout(() => modal.remove(), 150);
   }, 'accept'));
+
   buttons.appendChild(button(dictionary.DECLINE, () => {
     changeMusicVolume('0');
     changeSoundsVolume('0');
-    modal.remove();
+    modal.classList.add('fade');
+    setTimeout(() => modal.remove(), 150);
   }, 'decline'));
 
   modalContent.appendChild(title);

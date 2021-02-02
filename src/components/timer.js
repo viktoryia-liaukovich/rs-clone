@@ -1,9 +1,6 @@
 import { $, create } from '../utils/utils';
 import popup from './popup';
-import Lost from '../assets/popup/lost.gif';
-import Pause from '../assets/popup/pause.gif';
 import variables from '../global/variables';
-import pauseGame from './pauseGame';
 import dictionary from '../configs/dictionary';
 
 let lastRemainTime = {};
@@ -62,8 +59,6 @@ export default function timer(sec) {
 
         popup({
           title: dictionary.LOST_MESSAGE,
-          buttonText: dictionary.NEW_GAME,
-          image: Lost,
         });
       }
 
