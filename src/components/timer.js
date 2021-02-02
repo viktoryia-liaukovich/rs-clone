@@ -20,6 +20,27 @@ function getRemainTime(endTime) {
   };
 }
 
+function createTimer(parent, time) {
+  `0${time.minutes}`.split('').forEach((i) => {
+    const span = create('span');
+    span.classList.add('timer--count');
+    span.innerText = i;
+    parent.appendChild(span);
+  })
+
+  const span = create('span');
+  span.classList.add('timer--count_divider');
+  span.innerText = ':';
+  parent.appendChild(span);
+
+  `0${time.seconds}`.slice(-2).split('').forEach((i) => {
+    const span = create('span');
+    span.classList.add('timer--count');
+    span.innerText = i;
+    parent.appendChild(span);
+  })
+}
+
 export default function timer(sec) {
   let endTime = new Date(Date.parse(new Date()) + sec * 1000);
 
@@ -27,27 +48,17 @@ export default function timer(sec) {
   time.classList.add('timer');
   time.id = 'timer';
 
-  const minSecDiv = create('div');
-  minSecDiv.classList.add('timer-number');
-
-  const minSec = create('span');
-  minSec.classList.add('timer-time');
-  minSec.innerHTML = '00:00';
-
-  minSecDiv.appendChild(minSec);
-  time.appendChild(minSecDiv);
-  time.appendChild(pauseGame());
-
   let timerId;
 
   function updateTime() {
     if (variables.isGameInProgress) {
+      time.innerHTML = "";
       const t = getRemainTime(endTime);
       lastRemainTime = t;
 
       if (t.total <= 0) {
         clearInterval(timerId);
-        $('#root').removeChild(time);
+        time.remove();
 
         popup({
           title: dictionary.LOST_MESSAGE,
@@ -56,7 +67,7 @@ export default function timer(sec) {
         });
       }
 
-      minSec.innerHTML = `${(`0${t.minutes}`).slice(-2)}:${(`0${t.seconds}`).slice(-2)}`;
+      createTimer(time, t);
     } else {
       endTime = new Date(Date.parse(new Date())
         + ((lastRemainTime.minutes * 60 === 0 ? 1 : lastRemainTime.minutes * 60)

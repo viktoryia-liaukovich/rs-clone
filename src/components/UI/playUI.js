@@ -4,6 +4,7 @@ import timer from '../timer';
 import hint from '../hint';
 import variables from '../../global/variables';
 import moves from '../moves';
+import pauseGame from '../pauseGame';
 
 let tableEl = null;
 let countMove = null;
@@ -18,7 +19,9 @@ export function playUI({
     $('#root').appendChild(timer(time));
   }
 
-  hint(levelItems, itemsLayer);
+  $('#root').appendChild(hint(levelItems, itemsLayer));
+
+  $('#root').appendChild(pauseGame());
 }
 
 export function updateTable(newItems) {

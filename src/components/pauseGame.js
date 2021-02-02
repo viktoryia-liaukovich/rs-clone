@@ -3,13 +3,10 @@ import popup from './popup';
 import Pause from '../assets/popup/pause.gif';
 import variables from '../global/variables';
 import dictionary from '../configs/dictionary';
+import button from './button';
 
 export default function pauseGame() {
-  const pause = create('button');
-  pause.classList.add('pause__button');
-  pause.innerText = dictionary.PAUSE;
-
-  pause.addEventListener('click', () => {
+  const pause = button(dictionary.PAUSE, () => {
     popup({
       title: dictionary.PAUSE_MESSAGE,
       buttonText: dictionary.CONTINUE,
@@ -19,6 +16,7 @@ export default function pauseGame() {
       },
     });
     variables.isGameInProgress = !variables.isGameInProgress;
-  });
+  }, 'pause');
+
   return pause;
 }

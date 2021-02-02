@@ -6,6 +6,7 @@
   color: $color-text-light;
   font-size: 24px;
   font-weight: 700;
+  backdrop-filter: blur(10px);
 
   &:hover {
     cursor: $cursor-pointer;
@@ -18,5 +19,17 @@
 
   &_decline {
     color: $color-decline;
+  }
+
+  &_hint {
+    position: absolute;
+    right: 0;
+    top: 130px;
+  }
+
+  &_pause {
+    position: absolute;
+    right: 0;
+    top: 81px;
   }
 }

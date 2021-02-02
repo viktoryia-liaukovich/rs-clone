@@ -1,21 +1,10 @@
 import Konva from 'konva';
 import dictionary from '../configs/dictionary';
 import { $, create } from '../utils/utils';
+import button from './button';
 
 export default function hint(items, itemsLayer) {
-  let hintBtn = {};
-  if (!document.getElementById('hintBtn')) {
-    hintBtn = create('button');
-    hintBtn.classList.add('hintBtn');
-    hintBtn.id = 'hintBtn';
-    hintBtn.innerText = dictionary.HINT;
-
-    $('#root').appendChild(hintBtn);
-  } else {
-    hintBtn = document.getElementById('hintBtn');
-  }
-
-  hintBtn.addEventListener('click', () => {
+  const hintBtn = button(dictionary.HINT, () => {
     if (items.length > 0) {
       const angularSpeed = 90;
 
@@ -31,7 +20,7 @@ export default function hint(items, itemsLayer) {
         hintBtn.classList.add('disabled');
       }
     }
-  });
+  }, 'hint');
 
   return hintBtn;
 }
