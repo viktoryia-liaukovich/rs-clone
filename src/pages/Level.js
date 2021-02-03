@@ -10,6 +10,7 @@ import nextImg from '../assets/UI/next.png';
 import dictionary from '../configs/dictionary';
 import { save } from '../utils/saveSystem';
 import Map from './Map';
+import { playSoundEffect, soundbank, stopMainMusic } from '../utils/music';
 
 const canvasOptions = {
   width: 1920,
@@ -99,6 +100,8 @@ export default function Level(config) {
                 })
               }
 
+              playSoundEffect(soundbank.win);
+
               popup({
                 title: dictionary.LEVEL_WON_TITLE,
                 buttonText: dictionary.NEXT_LEVEL,
@@ -112,6 +115,10 @@ export default function Level(config) {
               });
             } else {
               $('#root').innerHTML = '';
+
+              stopMainMusic();
+              playSoundEffect(soundbank.victory);
+
               $('#root').appendChild(Final());
             }
 

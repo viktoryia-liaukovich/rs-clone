@@ -8,8 +8,6 @@ export default function pageLoader() {
   const loader = create('div');
   loader.classList.add('loader');
 
-  setTimeout(() => loader.classList.add('loader--moved'), 0);
-
   const rand = Math.floor(Math.random() * (Object.keys(loaders).length));
 
   loader.style.backgroundImage = `url(${loaders[rand].img})`;
@@ -40,6 +38,8 @@ export default function pageLoader() {
       variables.isGameInProgress = true;
     })
   }, 4000);
+
+  setTimeout(() => loader.classList.add('loader--moved'), 0);
 
   return loader;
 }
