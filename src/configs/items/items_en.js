@@ -26,7 +26,7 @@ export default {
     LOCK: 'Lock',
     BERET: 'Beret',
     FIREWORKS: 'Fireworks',
-    STAFF: 'Staff',
+    STICK: 'Stick',
     ICE: 'Ice',
     SNOWBALL: 'Snowball',
     MOON: 'Moon',

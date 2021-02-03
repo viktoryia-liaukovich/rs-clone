@@ -30,7 +30,7 @@ import Cloud from "../assets/items/cloud.png";
 
 import levelFour from "../assets/backgrounds/4.jpg";
 import Beret from "../assets/items/beret.png";
-import Staff from "../assets/items/staff.png";
+import Stick from "../assets/items/staff.png";
 import Ice from "../assets/items/ice.png";
 import Lock from "../assets/items/lock.png";
 import Fireworks from "../assets/items/fireworks.png";
@@ -481,8 +481,8 @@ export default {
       },
 
       {
-        name: itemsDict.STAFF,
-        image: Staff,
+        name: itemsDict.STICK,
+        image: Stick,
         size: {
           width: 90,
           height: 130,
@@ -931,7 +931,7 @@ export default {
         },
       },
       {
-        name: itemsDict.LITTLE_FAIRY,
+        name: itemsDict.FAIRY,
         image: ToothFairyHelper,
         size: {
           width: 43,

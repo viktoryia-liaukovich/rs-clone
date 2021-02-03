@@ -26,7 +26,7 @@ export default {
     LOCK: 'Замок',
     BERET: 'Бярэт',
     FIREWORKS: 'Феерверк',
-    STAFF: 'Персанал',
+    STICK: 'Посах',
     ICE: 'Лёд',
     SNOWBALL: 'Сняжок',
     MOON: 'Месяц',
