@@ -88,7 +88,7 @@ export default function disclaimer() {
   const agreeButton = button(dictionary.DISCLAIMER_AGREE, () => {
     modal.classList.add('fade');
     setTimeout(() => modal.remove(), 500);
-  }, 'accept');
+  }, 'accept', true);
 
   append([mentorTitle, mentor, message, images, agreeButton], modalContent);
   modal.appendChild(modalContent);
