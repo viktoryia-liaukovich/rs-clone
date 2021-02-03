@@ -25,13 +25,15 @@ export const musicbank = {
 };
 
 export function playMenuMusic() {
-  musicbank.main.play();
+  if (musicbank.main.paused) {
+    musicbank.main.play();
 
-  musicbank.main.onended = () => {
-    musicbank.menu.play();
+    musicbank.main.onended = () => {
+      musicbank.menu.play();
 
-    musicbank.menu.onended = () => {
-      musicbank.main.play();
+      musicbank.menu.onended = () => {
+        musicbank.main.play();
+      }
     }
   }
 }

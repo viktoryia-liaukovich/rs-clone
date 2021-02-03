@@ -6,7 +6,27 @@ export default {
   map: [
     {
       img: jack,
+      title: 'Jack Map',
+      text: 'I am Jack',
+      answer: 'Hello!',
+    },
+    {
+      img: sandy,
+      title: 'Sandyman',
+      text: 'We will guide yout through your journey! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet imperdiet justo.',
+      answer: 'Continue',
+    },
+    {
+      img: jack,
       title: 'Jack Frost',
+      text: 'Phasellus vel quam quis tellus gravida consectetur sit amet quis metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim est, laoreet nec rutrum in, semper vitae arcu.',
+      answer: 'START',
+    },
+  ],
+  final: [
+    {
+      img: jack,
+      title: 'Jack Final',
       text: 'I am Jack',
       answer: 'Hello!',
     },
