@@ -27,6 +27,7 @@ function createCredits() {
   credits.classList.add('credits--content');
 
   const logo = new Image();
+  logo.classList.add('logo-main');
   logo.src = logo_map[variables.lang];
 
   const devs = [dictionary.DEVELOPER1, dictionary.DEVELOPER2];
