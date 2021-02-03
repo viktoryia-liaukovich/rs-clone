@@ -10,7 +10,7 @@ import markerIcon from '../assets/UI/location-pin.png';
 import button from '../components/button';
 import Menu from './Menu';
 import dictionary from '../configs/dictionary';
-import { soundbank } from '../utils/music';
+import { playSoundEffect, soundbank } from '../utils/music';
 
 export default function Map() {
   const mapWrapper = create('div');
@@ -46,7 +46,7 @@ export default function Map() {
     marker.addEventListener('click', () => {
       variables.currentLevel = i;
 
-      soundbank.loader.play();
+      playSoundEffect(soundbank.loader);
 
       fadeRoot(() => {
         $('#root').innerHTML = '';

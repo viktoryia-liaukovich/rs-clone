@@ -7,7 +7,7 @@ import variables from '../global/variables';
 
 import logo_en from '../assets/UI/logo_en.png';
 import logo_ru from '../assets/UI/logo_ru.png';
-import { playOnHoverSound } from '../utils/music';
+import { playSoundEffect, soundbank } from '../utils/music';
 
 const logo_map = {
   en: logo_en,
@@ -46,7 +46,7 @@ export default function Menu() {
       li.classList.add('disabled');
     }
 
-    li.onmouseenter = () => playOnHoverSound();
+    li.onmouseenter = () => playSoundEffect(soundbank.hover);
 
     li.innerText = el;
     ul.appendChild(li);
@@ -59,6 +59,8 @@ export default function Menu() {
         $('#root').innerHTML = '';
         $('#root').appendChild(Map());
       });
+
+      playSoundEffect(soundbank.map);
 
       save({
         lastLevel: 0,
@@ -75,6 +77,9 @@ export default function Menu() {
         $('#root').innerHTML = '';
         $('#root').appendChild(Map());
       });
+
+      playSoundEffect(soundbank.map);
+
       break;
     }
     case menuConfig.OPTIONS: {

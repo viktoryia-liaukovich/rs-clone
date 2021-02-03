@@ -1,11 +1,14 @@
 import Konva from 'konva';
 import dictionary from '../configs/dictionary';
+import { playSoundEffect, soundbank } from '../utils/music';
 import { $, create } from '../utils/utils';
 import button from './button';
 
 export default function hint(itemsLayer) {
   const hintBtn = button(dictionary.HINT, () => {
     if (itemsLayer.children.length > 0) {
+      playSoundEffect(soundbank.hint);
+
       const angularSpeed = 90;
 
       const anim = new Konva.Animation((frame) => {
