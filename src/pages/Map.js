@@ -16,7 +16,12 @@ export default function Map() {
   const mapWrapper = create('div');
   mapWrapper.classList.add('map');
 
-  mapWrapper.style.backgroundImage = `url(${maps_config[variables.lastLevel]})`;
+  const bgImage = new Image();
+  bgImage.onload = () => {
+    mapWrapper.style.backgroundImage = `url(${bgImage.src})`;
+    $('#root').classList.remove('fade');
+  }
+  bgImage.src = maps_config[variables.lastLevel];
 
   if (!variables.isDialogFinished) {
     dialogueUI(() => {

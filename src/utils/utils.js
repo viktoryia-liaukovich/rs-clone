@@ -2,7 +2,7 @@ export const $ = (element) => document.querySelector(element);
 export const create = (element) => document.createElement(element);
 export const append = (elements, parent) => elements.forEach((element) => parent.appendChild(element));
 
-export const fadeRoot = (callback) => {
+export const fadeRoot = (callback, check = true) => {
   $('#root').classList.add('fade');
 
   if (callback) {
@@ -13,5 +13,5 @@ export const fadeRoot = (callback) => {
     $('#root').addEventListener('transitionend', render);
   }
 
-  setTimeout(() => $('#root').classList.remove('fade'), 500);
+  check && setTimeout(() => $('#root').classList.remove('fade'), 500);
 }
