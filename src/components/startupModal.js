@@ -21,22 +21,35 @@ export default function startupModal() {
   variables.sounds = "0";
   variables.music = "0";
 
-  buttons.appendChild(button(dictionary.ACCEPT, () => {
+  const buttonAccept = button(dictionary.ACCEPT, () => {
     changeMusicVolume(Number(load().music) || "0.1");
     changeSoundsVolume(Number(load().sounds) || "0.1");
     playMenuMusic();
 
     modal.classList.add('fade');
     setTimeout(() => modal.remove(), 250);
-  }, 'accept'));
+  }, 'accept')
 
-  buttons.appendChild(button(dictionary.DECLINE, () => {
+  buttons.appendChild(buttonAccept);
+
+
+  const buttonDecline = button(dictionary.DECLINE, () => {
     changeMusicVolume('0');
     changeSoundsVolume('0');
 
     modal.classList.add('fade');
     setTimeout(() => modal.remove(), 250);
-  }, 'decline'));
+  }, 'decline');
+  buttons.appendChild(buttonDecline);
+
+  const keyHandler = (e) => {
+    document.removeEventListener('keydown', keyHandler);
+
+    if (e.key === 'Escape') buttonDecline.click();
+    if (e.key === 'Enter') buttonAccept.click();
+  };
+
+  document.addEventListener('keydown', keyHandler);
 
   modalContent.appendChild(title);
   modalContent.appendChild(buttons);

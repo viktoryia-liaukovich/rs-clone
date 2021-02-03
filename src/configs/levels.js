@@ -846,7 +846,7 @@ export default {
         },
         pos: {
           x: 724,
-          y: 872,
+          y: 772,
           r: 60,
         },
       },
@@ -1039,8 +1039,8 @@ export default {
     background: levelSeven,
 
     point: {
-      x: 1425,
-      y: 595,
+      x: 1630,
+      y: 490,
     },
     time: 70,
     move: 20,

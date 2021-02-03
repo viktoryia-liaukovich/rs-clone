@@ -107,6 +107,18 @@ export default function popup({
     }
   });
 
+  const keyHandler = (e) => {
+    if (e.key === 'Escape' && buttonText) {
+      pagePopup.classList.add('fade');
+      pagePopup.ontransitionend = () => pagePopup.remove();
+      callback();
+    }
+
+    document.removeEventListener('keydown', keyHandler);
+  };
+
+  document.addEventListener('keydown', keyHandler);
+
   pagePopup.appendChild(popupContent);
 
   $('#root').appendChild(pagePopup);

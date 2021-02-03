@@ -78,7 +78,9 @@ export default function Level(config) {
         item.rotate(img.pos.r);
 
         item.on('click', () => {
-          levelItems = levelItems.filter((el) => el.name !== img.name);
+          const i = levelItems.findIndex((el) => el.name === img.name);
+          console.log(i);
+          levelItems.splice(i, 1);
 
           item.destroy();
 
