@@ -11,6 +11,10 @@
   align-items: center;
   transition: opacity 0.25s ease;
 
+  h2 {
+    text-transform: uppercase;
+  }
+
   &.fade {
     opacity: 0;
   }

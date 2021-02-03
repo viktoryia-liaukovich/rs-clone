@@ -6,7 +6,10 @@
     box-sizing: border-box;
     font-family: 'Josefin Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     cursor: $cursor-default;
-    transition: 0.15s ease;
+
+    transition-property: border, color, filter, transform, opacity;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
 }
 
 body {

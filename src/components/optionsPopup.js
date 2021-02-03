@@ -125,7 +125,7 @@ function createLanguageSelector() {
 
 export default function optionsPopup() {
   const options = create('div');
-  options.classList.add('options', 'modal');
+  options.classList.add('options', 'modal', 'fade');
 
   const optionsContent = create('div');
   optionsContent.classList.add('options--content', 'modal--content');
@@ -154,8 +154,11 @@ export default function optionsPopup() {
   };
 
   cross.onclick = () => {
-    options.remove();
+    options.classList.add('fade');
+    setTimeout(() => options.remove(), 500);
   };
+
+  setTimeout(() => options.classList.remove('fade'), 0);
 
   return options;
 }
