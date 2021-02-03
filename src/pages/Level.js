@@ -109,7 +109,7 @@ export default function Level(config) {
                   fadeRoot(() => {
                     $('#root').innerHTML = '';
                     $('#root').appendChild(Map());
-                  })
+                  }, false)
                 },
               });
             } else {

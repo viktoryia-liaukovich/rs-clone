@@ -25,7 +25,7 @@ export const musicbank = {
 };
 
 export function playMenuMusic() {
-  if (musicbank.main.paused) {
+  if (musicbank.main.paused || musicbank.menu.paused) {
     musicbank.main.play();
 
     musicbank.main.onended = () => {

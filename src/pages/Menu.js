@@ -58,7 +58,7 @@ export default function Menu() {
       fadeRoot(() => {
         $('#root').innerHTML = '';
         $('#root').appendChild(Map());
-      });
+      }, false);
 
       playSoundEffect(soundbank.map);
 
@@ -76,7 +76,7 @@ export default function Menu() {
       fadeRoot(() => {
         $('#root').innerHTML = '';
         $('#root').appendChild(Map());
-      });
+      }, false);
 
       playSoundEffect(soundbank.map);
 
