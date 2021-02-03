@@ -381,7 +381,7 @@ export default {
           height: 32,
         },
         pos: {
-          x: 1350,
+          x: 1400,
           y: 900,
           r: 0,
         },

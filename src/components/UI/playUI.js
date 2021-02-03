@@ -19,7 +19,7 @@ export function playUI({
     $('#root').appendChild(timer(time));
   }
 
-  $('#root').appendChild(hint(levelItems, itemsLayer));
+  $('#root').appendChild(hint(itemsLayer));
 
   $('#root').appendChild(pauseGame());
 }
