@@ -6,10 +6,13 @@
   color: $color-text-light;
   font-size: 24px;
   font-weight: 700;
+  backdrop-filter: blur(10px);
+  transform-origin: center;
 
   &:hover {
     cursor: $cursor-pointer;
     border-color: $color-focus;
+    transform: scale(1.2);
   }
 
   &_accept {
@@ -18,5 +21,48 @@
 
   &_decline {
     color: $color-decline;
+  }
+
+  &_hint {
+    position: absolute;
+    right: 10px;
+    top: 190px;
+
+    width: 64px;
+    height: 64px;
+    border: none;
+    border-radius: 50%;
+
+    font-size: 0;
+    background-image: url('./assets/UI/hint.png');
+  }
+
+  &_pause {
+    position: absolute;
+    right: 10px;
+    top: 110px;
+
+    width: 64px;
+    height: 64px;
+    border: none;
+    border-radius: 50%;
+
+    font-size: 0;
+    background-image: url('./assets/UI/pause.png');
+  }
+
+  &_menu {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+
+    width: 64px;
+    height: 64px;
+
+    border: none;
+    border-radius: 50%;
+
+    font-size: 0;
+    background-image: url('./assets/UI/back.png');
   }
 }

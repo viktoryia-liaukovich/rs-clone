@@ -7,9 +7,10 @@ import createGlobalListeners from './global/listeners';
 
 !load() && setDefault();
 parseSave();
+
 createGlobalListeners();
 
 append([
   Menu(),
-  startupModal(),
-], $('#root'));
+  startupModal()
+], $('#root'))

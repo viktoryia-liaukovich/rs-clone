@@ -1,42 +1,90 @@
-#popup {
-    background: rgba(102, 102, 102, 0.5);
+.popup {
+    background: linear-gradient(black, rgba(10, 10, 10, 0.55), black);
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
     left: 0;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     backdrop-filter: blur(10px);
-}
 
-#popup__text {
-    width: 600px;
-    text-align: center;
-    padding: 15px;
-    border: 3px solid #42423efa;
-    border-radius: 10px;
-    color: #fff;
-    background: #42423efa;
-}
+    &.fade {
+        opacity: 0;
+    }
 
-#popup:target {
-    display: block;
-}
+    &--text {
+        position: absolute;
+        top: 275px;
+        font-size: 48px;
+        color: $color-text-light;
+    }
 
-.popup__btn {
-    display: inline-block;
-    border: 1px solid #e6b147a6;
-    color: #fff;
-    padding: 0 12px;
-    margin: 10px;
-    text-decoration: none;
-    background: #e6b147a6;
-    font-size: 14pt;
-    cursor: $cursor-pointer;
-}
+    &--content {
+        text-align: center;
+        color: #fff;
+        display: flex;
+    }
 
-.popup__btn:hover {
-    background: #f3a304a6;
+    &--card {
+        position: relative;
+        height: 120px;
+        width: 195px;
+
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: space-around;
+
+        border: none;
+        margin: 5px;
+        padding: 10px 0;
+        background-color: transparent;
+
+        font-size: 18px;
+        font-weight: 800;
+        letter-spacing: 1px;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: $color-text-light;
+        cursor: $cursor-pointer;
+        transition: color 0.15s ease;
+
+        img {
+            pointer-events: none;
+            transition: filter 0.15s ease;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+
+            background-image: url('./assets/UI/papirus.png');
+            background-position: -100px -20px;
+
+            filter: saturate(0.85);
+            opacity: 0;
+            transition: opacity 0.15s ease;
+        }
+
+        &:hover {
+            color: $color-text-black;
+
+            &:before {
+                opacity: 1;
+            }
+
+            img {
+                filter: invert(1);
+            }
+        }
+    }
 }

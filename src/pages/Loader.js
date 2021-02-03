@@ -37,6 +37,7 @@ export default function pageLoader() {
     loader.classList.add('fade');
     loader.addEventListener('transitionend', () => {
       loader.remove();
+      variables.isGameInProgress = true;
     })
   }, 4000);
 

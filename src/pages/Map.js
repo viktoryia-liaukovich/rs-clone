@@ -7,6 +7,10 @@ import dialogueUI from '../components/UI/dialogueUI';
 import Level from './Level';
 import pageLoader from './Loader';
 import markerIcon from '../assets/UI/location-pin.png';
+import button from '../components/button';
+import Menu from './Menu';
+import dictionary from '../configs/dictionary';
+import { soundbank } from '../utils/music';
 
 export default function Map() {
   const mapWrapper = create('div');
@@ -42,6 +46,8 @@ export default function Map() {
     marker.addEventListener('click', () => {
       variables.currentLevel = i;
 
+      soundbank.loader.play();
+
       fadeRoot(() => {
         $('#root').innerHTML = '';
         Level(config[i]);
@@ -49,6 +55,13 @@ export default function Map() {
       });
     });
   });
+
+  mapWrapper.appendChild(button(dictionary.BACK_TO_MENU, () => {
+    fadeRoot(() => {
+      $('#root').innerHTML = '';
+      $('#root').appendChild(Menu());
+    });
+  }, 'menu'));
 
   return mapWrapper;
 }
