@@ -393,12 +393,12 @@ export default {
         name: itemsDict.MEMORY_BOX,
         image: Box,
         size: {
-          width: 15,
-          height: 50,
+          width: 30,
+          height: 100,
         },
         pos: {
           x: 855,
-          y: 310,
+          y: 300,
           r: 0,
         },
       },
