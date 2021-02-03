@@ -34,7 +34,7 @@ export default function Level(config) {
     }
   }
 
-  let levelItems = items;
+  let levelItems = [...items];
   const stage = new Konva.Stage({
     container: 'root',
     width: canvasOptions.width,
@@ -80,7 +80,6 @@ export default function Level(config) {
 
         item.on('click', () => {
           const i = levelItems.findIndex((el) => el.name === img.name);
-          console.log(i);
           levelItems.splice(i, 1);
 
           item.destroy();
@@ -114,12 +113,12 @@ export default function Level(config) {
                 },
               });
             } else {
-              $('#root').innerHTML = '';
-
               stopMainMusic();
-              playSoundEffect(soundbank.victory);
 
-              $('#root').appendChild(Final());
+              fadeRoot(() => {
+                $('#root').innerHTML = '';
+                $('#root').appendChild(Final());
+              })
             }
 
             clearInterval(variables.timerId);
