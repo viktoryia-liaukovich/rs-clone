@@ -18,16 +18,24 @@ export default function startupModal() {
   const buttons = create('div');
   buttons.classList.add('buttons-wrapper');
 
+  variables.sounds = "0";
+  variables.music = "0";
+
   buttons.appendChild(button(dictionary.ACCEPT, () => {
-    changeMusicVolume(load().music);
-    changeSoundsVolume(load().sounds);
+    changeMusicVolume(Number(load().music) || "0.1");
+    changeSoundsVolume(Number(load().sounds) || "0.1");
     playMenuMusic();
-    modal.remove();
+
+    modal.classList.add('fade');
+    setTimeout(() => modal.remove(), 250);
   }, 'accept'));
+
   buttons.appendChild(button(dictionary.DECLINE, () => {
     changeMusicVolume('0');
     changeSoundsVolume('0');
-    modal.remove();
+
+    modal.classList.add('fade');
+    setTimeout(() => modal.remove(), 250);
   }, 'decline'));
 
   modalContent.appendChild(title);

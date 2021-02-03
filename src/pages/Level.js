@@ -1,20 +1,19 @@
 import Konva from 'konva';
-import { playUI, updateTable, updateMoves } from '../components/UI/playUI';
+import { updateTable, updateMoves } from '../components/UI/playUI';
+import popup from '../components/popup';
+import dialogueUI from '../components/UI/dialogueUI';
 import { $, fadeRoot } from '../utils/utils';
 import levels from '../configs/levels';
 import variables from '../global/variables';
-import popup from '../components/popup';
-import Won from '../assets/popup/won.gif';
 import Final from './Final';
-import Lost from '../assets/popup/lost.gif';
-import dialogueUI from '../components/UI/dialogueUI';
+import nextImg from '../assets/UI/next.png';
 import dictionary from '../configs/dictionary';
 import { save } from '../utils/saveSystem';
 import Map from './Map';
 
 const canvasOptions = {
-  width: window.innerWidth,
-  height: window.innerHeight,
+  width: 1920,
+  height: 1080,
 };
 
 export default function Level(config) {
@@ -30,8 +29,6 @@ export default function Level(config) {
     if (count === 0) {
       popup({
         title: dictionary.LOST_MESSAGE_MOVES,
-        buttonText: dictionary.NEW_GAME,
-        image: Lost,
       });
     }
   }
@@ -103,7 +100,7 @@ export default function Level(config) {
               popup({
                 title: dictionary.LEVEL_WON_TITLE,
                 buttonText: dictionary.NEXT_LEVEL,
-                image: Won,
+                image: nextImg,
                 callback: () => {
                   fadeRoot(() => {
                     $('#root').innerHTML = '';
@@ -135,6 +132,4 @@ export default function Level(config) {
   dialogueUI({
     levelItems, move, time, itemsLayer,
   });
-
-  variables.isGameInProgress = true;
 }
