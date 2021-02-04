@@ -84,6 +84,10 @@ export default function Final() {
     video.muted = true;
   }
 
+  video.oncanplay = () => {
+    video.play();
+  }
+
   const credits = createCredits();
 
   video.onended = () => {
