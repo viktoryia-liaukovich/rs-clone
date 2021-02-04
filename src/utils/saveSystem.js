@@ -23,8 +23,8 @@ export function setDefault() {
 }
 
 export function parseSave() {
-  const save = load();
-  Object.keys(save).forEach((key) => {
-    variables[key] = save[key];
+  const saveData = load();
+  Object.keys(saveData).forEach((key) => {
+    variables[key] = saveData[key];
   });
 }

@@ -6,12 +6,15 @@ import disclaimer from './components/disclaimer';
 
 import './index.scss';
 
-!load() && setDefault();
+if (!load()) {
+  setDefault();
+}
+
 parseSave();
 
 createGlobalListeners();
 
 append([
   Menu(),
-  disclaimer()
-], $('#root'))
+  disclaimer(),
+], $('#root'));

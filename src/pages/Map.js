@@ -2,7 +2,7 @@ import { $, create, fadeRoot } from '../utils/utils';
 import { save } from '../utils/saveSystem';
 import variables from '../global/variables';
 import config from '../configs/levels';
-import maps_config from '../configs/maps';
+import mapsConfig from '../configs/maps';
 import dialogueUI from '../components/UI/dialogueUI';
 import Level from './Level';
 import pageLoader from './Loader';
@@ -20,8 +20,8 @@ export default function Map() {
   bgImage.onload = () => {
     mapWrapper.style.backgroundImage = `url(${bgImage.src})`;
     $('#root').classList.remove('fade');
-  }
-  bgImage.src = maps_config[variables.lastLevel];
+  };
+  bgImage.src = mapsConfig[variables.lastLevel];
 
   if (!variables.isDialogFinished) {
     dialogueUI(() => {
@@ -37,8 +37,8 @@ export default function Map() {
     marker.src = markerIcon;
 
     marker.classList.add('marker');
-    marker.style.top = `${el.point.y / 1080 * 100}%`;
-    marker.style.left = `${el.point.x / 1920 * 100}%`;
+    marker.style.top = `${(el.point.y / 1080) * 100}%`;
+    marker.style.left = `${(el.point.x / 1920) * 100}%`;
 
     if (i > variables.lastLevel) {
       marker.classList.add('disabled');

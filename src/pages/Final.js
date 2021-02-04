@@ -1,4 +1,6 @@
-import { $, append, create, fadeRoot } from '../utils/utils';
+import {
+  $, append, create, fadeRoot,
+} from '../utils/utils';
 import variables from '../global/variables';
 import dictionary from '../configs/dictionary';
 
@@ -7,16 +9,16 @@ import Menu from './Menu';
 import dialogueUI from '../components/UI/dialogueUI';
 
 import outro from '../assets/final/outro.mp4';
-import logo_en from '../assets/UI/logo_en.png';
-import logo_ru from '../assets/UI/logo_ru.png';
+import logoEn from '../assets/UI/logo_en.png';
+import logoRu from '../assets/UI/logo_ru.png';
 import logo1 from '../assets/UI/rsschool.png';
 import logo2 from '../assets/UI/logo_rs2.svg';
 import logo3 from '../assets/UI/epam.png';
 
-const logo_map = {
-  en: logo_en,
-  ru: logo_ru,
-  by: logo_en,
+const logoMap = {
+  en: logoEn,
+  ru: logoRu,
+  by: logoEn,
 };
 
 function createCredits() {
@@ -28,7 +30,7 @@ function createCredits() {
 
   const logo = new Image();
   logo.classList.add('logo-main');
-  logo.src = logo_map[variables.lang];
+  logo.src = logoMap[variables.lang];
 
   const devs = [dictionary.DEVELOPER1, dictionary.DEVELOPER2];
 
@@ -42,7 +44,7 @@ function createCredits() {
     developer.innerText = dev;
 
     credits.appendChild(developer);
-  })
+  });
 
   const mentorTitle = create('h3');
   mentorTitle.innerText = dictionary.MENTOR_TITLE;
@@ -61,7 +63,7 @@ function createCredits() {
     img.classList.add('logo');
 
     images.appendChild(img);
-  })
+  });
 
   append([mentorTitle, mentor, message, images], credits);
 
@@ -72,10 +74,10 @@ function createCredits() {
 
 export default function Final() {
   const final = create('div');
-  final.classList.add(`final`);
+  final.classList.add('final');
 
   const video = create('video');
-  video.classList.add('final--video')
+  video.classList.add('final--video');
   video.src = outro;
   video.autoplay = true;
   video.controls = false;
@@ -86,7 +88,7 @@ export default function Final() {
 
   video.oncanplay = () => {
     video.play();
-  }
+  };
 
   const credits = createCredits();
 
@@ -99,11 +101,11 @@ export default function Final() {
           fadeRoot(() => {
             $('#root').innerHTML = '';
             $('#root').appendChild(Menu());
-          })
-        }
-      })
+          });
+        };
+      });
     }, 'final');
-  }
+  };
 
   $('#root').appendChild(credits);
   final.appendChild(video);

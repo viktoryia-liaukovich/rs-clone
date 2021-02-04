@@ -14,4 +14,4 @@ export default {
   4: map_4,
   5: map_5,
   6: map_6,
-}
+};

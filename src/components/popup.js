@@ -3,7 +3,9 @@ import levels from '../configs/levels';
 import variables from '../global/variables';
 import Level from '../pages/Level';
 import Menu from '../pages/Menu';
-import { $, append, create, fadeRoot } from '../utils/utils';
+import {
+  $, append, create, fadeRoot,
+} from '../utils/utils';
 import optionsPopup from './optionsPopup';
 
 import restartImg from '../assets/UI/restart.png';
@@ -53,13 +55,13 @@ export default function popup({
     popupButtons.CUSTOM = {
       text: buttonText,
       img: image,
-    }
+    };
   }
 
   Object.values(popupButtons).forEach((el) => {
     if (el) {
       const card = create('button');
-      card.classList.add(`popup--card`);
+      card.classList.add('popup--card');
 
       const img = new Image();
       img.src = el.img;
@@ -78,7 +80,7 @@ export default function popup({
       fadeRoot(() => {
         $('#root').innerHTML = '';
         $('#root').appendChild(Menu());
-      })
+      });
       break;
     }
     case popupButtons.OPTIONS.text: {

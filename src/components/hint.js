@@ -15,14 +15,13 @@ export default function hint(itemsLayer) {
         const angleDiff = (frame.timeDiff * angularSpeed) / 1000;
 
         itemsLayer.children[0].rotate(angleDiff);
-
       }, itemsLayer);
 
       anim.start();
 
       itemsLayer.children[0].on('click', () => {
         anim.stop();
-      })
+      });
     }
   }, 'hint');
 
