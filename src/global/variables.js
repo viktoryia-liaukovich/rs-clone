@@ -9,7 +9,7 @@ const variables = {
   fullscreen: Boolean(document.fullscreenElement),
   lang: 'en',
   isDialogFinished: false,
-  version: '1.0',
+  version: '1.01',
 };
 
 export default variables;
