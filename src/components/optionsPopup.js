@@ -1,4 +1,4 @@
-import { create, append } from '../utils/utils';
+import { create, append, $, fadeRoot } from '../utils/utils';
 import musicIcon from '../assets/UI/music.png';
 import soundsIcon from '../assets/UI/sounds.png';
 import { changeMusicVolume, changeSoundsVolume } from '../utils/music';
@@ -6,6 +6,8 @@ import { load, save } from '../utils/saveSystem';
 import mode from './mode';
 import variables from '../global/variables';
 import dictionary from '../configs/dictionary';
+import Level from '../pages/Level';
+import levels from '../configs/levels';
 
 function createSoundsOptions(name, icon, callback) {
   const soundsOptions = create('div');
@@ -62,6 +64,13 @@ function createChildModeOption() {
 
   append([childModeText, mode('childMode', () => {
     variables.childMode = !variables.childMode;
+
+    if ($('.konvajs-content')) {
+      fadeRoot(() => {
+        Level(levels[variables.currentLevel]);
+      })
+    }
+
     save({
       childMode: variables.childMode,
     });
