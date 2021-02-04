@@ -17,10 +17,12 @@ const canvasOptions = {
   height: (window.innerWidth * 9) / 16,
 };
 
-export default function Level(config) {
+export default function Level(config, i) {
   const {
     items, background, time, move,
   } = config;
+
+  window.history.replaceState({}, 'Level', `/level?lvl=${variables.currentLevel}`);
 
   let count = move;
 
