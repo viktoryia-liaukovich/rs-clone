@@ -53,17 +53,8 @@ input, select, option {
 }
 
 .konvajs-content {
-    height: calc(100vw * 9 / 16) !important;
-    width: 100vw !important;
-    max-height: 100vh;
-    max-width: calc(100vh * 16 / 9);
-
-    canvas {
-        height: calc(100vw * 9 / 16) !important;
-        width: 100vw !important;
-        max-height: 100vh;
-        max-width: calc(100vh * 16 / 9);
-
-        top: calc(50vh - (100vw * 9 / 16 / 2));
-    }
+    // height: calc(100vw * 9 / 16) !important;
+    // width: 100vw !important;
+    // max-height: 100vh;
+    // max-width: calc(100vh * 16 / 9);
 }

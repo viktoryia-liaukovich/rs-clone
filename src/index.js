@@ -13,6 +13,5 @@ createGlobalListeners();
 
 append([
   Menu(),
-  startupModal(),
   disclaimer()
 ], $('#root'))

@@ -1,10 +1,11 @@
-import { append, create } from '../utils/utils';
+import { $, append, create } from '../utils/utils';
 import dictionary from '../configs/dictionary';
 import button from './button';
 import github from '../assets/UI/github.svg';
 import logo from '../assets/UI/rsschool.png';
 import logo2 from '../assets/UI/logo_rs2.svg';
 import logo3 from '../assets/UI/epam.png';
+import startupModal from './startupModal';
 
 const devs = [
   {
@@ -87,6 +88,9 @@ export default function disclaimer() {
 
   const agreeButton = button(dictionary.DISCLAIMER_AGREE, () => {
     modal.classList.add('fade');
+
+    $('#root').appendChild(startupModal());
+
     setTimeout(() => modal.remove(), 500);
   }, 'accept', true);
 
