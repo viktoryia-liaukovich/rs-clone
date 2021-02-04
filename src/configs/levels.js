@@ -383,7 +383,7 @@ export default {
         },
         pos: {
           x: 1400,
-          y: 900,
+          y: 800,
           r: 0,
         },
         isKey: false,
