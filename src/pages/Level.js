@@ -13,8 +13,8 @@ import Map from './Map';
 import { playSoundEffect, soundbank, stopMainMusic } from '../utils/music';
 
 const canvasOptions = {
-  width: 1920,
-  height: 1080,
+  width: window.innerWidth,
+  height: window.innerWidth * 9 / 16,
 };
 
 export default function Level(config) {
@@ -41,6 +41,20 @@ export default function Level(config) {
     height: canvasOptions.height,
   });
 
+  const resizer = () => {
+    stage.width(window.innerWidth);
+    stage.height(window.innerWidth * 9 / 16);
+    const scaleX = stage.width() / 1920;
+    const scaleY = stage.height() / 1080;
+    stage.scaleX(scaleX);
+    stage.scaleY(scaleY);
+    stage.batchDraw();
+  }
+
+  resizer();
+
+  window.onresize = resizer;
+
   const bgLayer = new Konva.Layer();
   const itemsLayer = new Konva.Layer();
 
@@ -57,7 +71,8 @@ export default function Level(config) {
     bg.setAttrs({
       x: 0,
       y: 0,
-      width: canvasOptions.width,
+      width: 1920,
+      height: 1080,
     });
 
     bgLayer.add(bg);
