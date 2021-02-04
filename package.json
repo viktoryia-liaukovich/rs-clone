@@ -1,6 +1,6 @@
 {
   "name": "rs-clone-search-game",
-  "version": "1.01",
+  "version": "1.0.2",
   "description": "RS School Task Basic Project",
   "main": "index.js",
   "scripts": {

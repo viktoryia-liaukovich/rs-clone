@@ -93,7 +93,7 @@ export default function Level(config) {
 
         item.rotate(img.pos.r);
 
-        item.on('click', () => {
+        const actionHandler = () => {
           const i = levelItems.findIndex((el) => el.name === img.name);
           levelItems.splice(i, 1);
 
@@ -142,7 +142,10 @@ export default function Level(config) {
           if (variables.childMode) {
             findAttempt();
           }
-        });
+        }
+
+        item.on('click', actionHandler);
+        item.on('tap', actionHandler);
 
         itemsLayer.add(item);
         itemsLayer.batchDraw();

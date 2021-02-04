@@ -37,8 +37,8 @@ export default function Map() {
     marker.src = markerIcon;
 
     marker.classList.add('marker');
-    marker.style.top = `${el.point.y}px`;
-    marker.style.left = `${el.point.x}px`;
+    marker.style.top = `${el.point.y / 1080 * 100}%`;
+    marker.style.left = `${el.point.x / 1920 * 100}%`;
 
     if (i > variables.lastLevel) {
       marker.classList.add('disabled');
