@@ -27,7 +27,7 @@ export default function startupModal() {
     playMenuMusic();
 
     modal.classList.add('fade');
-    setTimeout(() => modal.remove(), 250);
+    setTimeout(() => modal.remove(), 150);
   }, 'accept');
 
   buttons.appendChild(buttonAccept);
@@ -37,7 +37,7 @@ export default function startupModal() {
     changeSoundsVolume('0');
 
     modal.classList.add('fade');
-    setTimeout(() => modal.remove(), 250);
+    setTimeout(() => modal.remove(), 150);
   }, 'decline');
   buttons.appendChild(buttonDecline);
 

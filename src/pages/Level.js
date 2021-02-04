@@ -22,8 +22,6 @@ export default function Level(config, i) {
     items, background, time, move,
   } = config;
 
-  window.history.replaceState({}, 'Level', `/level?lvl=${variables.currentLevel}`);
-
   let count = move;
 
   function findAttempt() {
@@ -160,4 +158,6 @@ export default function Level(config, i) {
   dialogueUI({
     levelItems, move, time, itemsLayer,
   });
+
+  window.history.replaceState({}, 'Level', `/level?lvl=${variables.currentLevel}`);
 }

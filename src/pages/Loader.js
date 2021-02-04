@@ -33,13 +33,11 @@ export default function pageLoader() {
 
   setTimeout(() => {
     loader.classList.add('fade');
-    loader.addEventListener('transitionend', () => {
+    setTimeout(() => {
       loader.remove();
       variables.isGameInProgress = true;
-    });
+    }, 150);
   }, 4000);
-
-  setTimeout(() => loader.classList.add('loader--moved'), 0);
 
   return loader;
 }

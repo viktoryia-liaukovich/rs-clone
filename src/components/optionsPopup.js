@@ -1,4 +1,4 @@
-import { create, append } from '../utils/utils';
+import { create, append, $, fadeRoot } from '../utils/utils';
 import musicIcon from '../assets/UI/music.png';
 import soundsIcon from '../assets/UI/sounds.png';
 import { changeMusicVolume, changeSoundsVolume } from '../utils/music';
@@ -6,6 +6,8 @@ import { load, save } from '../utils/saveSystem';
 import mode from './mode';
 import variables from '../global/variables';
 import dictionary from '../configs/dictionary';
+import Level from '../pages/Level';
+import levels from '../configs/levels';
 
 function createSoundsOptions(name, icon, callback) {
   const soundsOptions = create('div');
@@ -62,6 +64,13 @@ function createChildModeOption() {
 
   append([childModeText, mode('childMode', () => {
     variables.childMode = !variables.childMode;
+
+    if ($('.konvajs-content')) {
+      fadeRoot(() => {
+        Level(levels[variables.currentLevel]);
+      })
+    }
+
     save({
       childMode: variables.childMode,
     });
@@ -125,7 +134,7 @@ function createLanguageSelector() {
 
 export default function optionsPopup() {
   const options = create('div');
-  options.classList.add('options', 'modal', 'fade');
+  options.classList.add('options', 'modal');
 
   const optionsContent = create('div');
   optionsContent.classList.add('options--content', 'modal--content');
@@ -149,16 +158,15 @@ export default function optionsPopup() {
 
   options.onclick = (e) => {
     if (e.target.className === options.className) {
-      options.remove();
+      options.classList.add('fade');
+      setTimeout(() => options.remove(), 150);
     }
   };
 
   cross.onclick = () => {
     options.classList.add('fade');
-    setTimeout(() => options.remove(), 500);
+    setTimeout(() => options.remove(), 150);
   };
-
-  setTimeout(() => options.classList.remove('fade'), 0);
 
   return options;
 }

@@ -8,20 +8,16 @@
   background: black;
   z-index: 99;
   color: $color-text-light;
-  transition: 2s ease-in-out;
-  background-position-y: 100px;
 
   font-size: 20px;
 
   background-size: cover;
   background-repeat: no-repeat;
 
-  &--moved {
-    background-position-y: -100px;
-  }
+  @include animation('bottomToTop 2s ease-in-out forwards');
 
   &.fade {
-    opacity: 0;
+    @include animation('fade 0.15s linear forwards');
   }
 
   &:before,
@@ -72,5 +68,14 @@
 @include keyframes(spin) {
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@include keyframes(bottomToTop) {
+  0% {
+    background-position-y: 100px;
+  }
+  100% {
+    background-position-y: -100px;
   }
 }
