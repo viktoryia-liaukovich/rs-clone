@@ -10,13 +10,16 @@
   justify-content: center;
   align-items: center;
   transition: opacity 0.25s ease;
+  opacity: 0;
 
   h2 {
     text-transform: uppercase;
   }
 
+  @include animation('unfade 0.15s linear forwards');
+
   &.fade {
-    opacity: 0;
+    @include animation('fade 0.15s linear forwards');
   }
 
   &--content {

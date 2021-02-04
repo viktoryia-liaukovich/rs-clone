@@ -8,11 +8,7 @@ export const fadeRoot = (callback, check = true) => {
   $('#root').classList.add('fade');
 
   if (callback) {
-    const render = () => {
-      $('#root').removeEventListener('transitionend', render);
-      callback();
-    };
-    $('#root').addEventListener('transitionend', render);
+    setTimeout(callback, 500);
   }
 
   if (check) {

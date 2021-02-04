@@ -13,8 +13,6 @@ import dictionary from '../configs/dictionary';
 import { playSoundEffect, soundbank } from '../utils/music';
 
 export default function Map() {
-  window.history.replaceState({}, 'Map', '/map');
-
   const mapWrapper = create('div');
   mapWrapper.classList.add('map');
 
@@ -57,7 +55,7 @@ export default function Map() {
 
       fadeRoot(() => {
         $('#root').innerHTML = '';
-        Level(config[i]);
+        Level(el, i);
         $('#root').appendChild(pageLoader());
       });
     });
@@ -69,6 +67,8 @@ export default function Map() {
       $('#root').appendChild(Menu());
     });
   }, 'menu'));
+
+  window.history.replaceState({}, 'Map', '/map');
 
   return mapWrapper;
 }

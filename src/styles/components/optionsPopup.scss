@@ -2,9 +2,12 @@
   input[type='range'] {
     width: 80%;
   }
+  opacity: 0;
+
+  @include animation('unfade 0.15s linear forwards');
 
   &.fade {
-    opacity: 0;
+    @include animation('fade 0.15s linear forwards');
   }
 }
 
