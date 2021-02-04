@@ -30,6 +30,6 @@ export default {
   DEVELOPER2: 'Слапік Таццяна',
   MENTOR: 'Мікіта Ляўковіч',
   MENTOR_TITLE: 'Ментар',
-  DISCLAIMER_MESSAGE: '<h3>Захавальнікі Сноў</h3><p>Гульня распрацавана ў якасці выпускнога таска для курсаў <i>The Rolling Scopes JS/FE 2020Q3</i></p><p>Усе правы належаць стваральнікам змесціва. Лагатыпы "Захавальнікі сноў" і "Rise of the Guardians" належаць DreamWorks Animation SKG. © 2021.</p>',
+  DISCLAIMER_MESSAGE: '<h3>Захавальнікі Сноў</h3><p>Гульня распрацавана ў якасці выпускнога таска для курсаў <i>The Rolling Scopes JS/FE 2020Q3</i></p><p>Усе правы належаць стваральнікам змесціва. Лагатыпы "Захавальнікі сноў" і "Rise of the Guardians" належаць DreamWorks Animation SKG. © 2021.</p><p>Калі ласка, наведайце налады для змены мовы і іншых налад</p>',
   DISCLAIMER_AGREE: 'Я прачытаў. Пагналі!',
 };

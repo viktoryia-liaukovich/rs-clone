@@ -7,7 +7,7 @@ const variables = {
   music: false,
   sounds: false,
   fullscreen: Boolean(document.fullscreenElement),
-  lang: 'en',
+  lang: 'ru',
   isDialogFinished: false,
   version: '1.02',
 };

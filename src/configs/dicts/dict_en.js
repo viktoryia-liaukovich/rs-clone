@@ -30,6 +30,6 @@ export default {
   DEVELOPER2: 'Slapik Tatsiana',
   MENTOR: 'Mikita Liaukovich',
   MENTOR_TITLE: 'Mentor',
-  DISCLAIMER_MESSAGE: '<h3>Rise of the Guardians</h3><p>The game was developed as a final task of <i>The Rolling Scopes JS/FE 2020Q3</i> course</p><p>All right reserved by content owners. Logotypes "Хранители Снов" и "Rise of the Guardians" owned by DreamWorks Animation SKG. © 2021.</p>',
+  DISCLAIMER_MESSAGE: '<h3>Rise of the Guardians</h3><p>The game was developed as a final task of <i>The Rolling Scopes JS/FE 2020Q3</i> course</p><p>All right reserved by content owners. Logotypes "Хранители Снов" и "Rise of the Guardians" owned by DreamWorks Animation SKG. © 2021.</p><p>Please visit the settings for changing the language and other settings</p>',
   DISCLAIMER_AGREE: 'I read it. Let\'s go!',
 };

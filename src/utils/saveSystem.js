@@ -15,7 +15,7 @@ export function setDefault() {
     music: '1',
     sounds: '1',
     childMode: false,
-    lang: 'en',
+    lang: 'ru',
     isDialogFinished: false,
     currentLevel: 0,
     lastLevel: 0,
