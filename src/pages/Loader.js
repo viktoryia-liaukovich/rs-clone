@@ -36,7 +36,7 @@ export default function pageLoader() {
     loader.addEventListener('transitionend', () => {
       loader.remove();
       variables.isGameInProgress = true;
-    })
+    });
   }, 4000);
 
   setTimeout(() => loader.classList.add('loader--moved'), 0);

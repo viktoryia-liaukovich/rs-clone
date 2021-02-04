@@ -15,13 +15,13 @@ const devs = [
   {
     link: 'https://github.com/TatsianaSlapik',
     name: dictionary.DEVELOPER2,
-  }
-]
+  },
+];
 
 const ment = {
   link: 'https://github.com/mikitaliaukovich',
   name: dictionary.MENTOR,
-}
+};
 
 export default function disclaimer() {
   const modal = create('div');
@@ -54,7 +54,7 @@ export default function disclaimer() {
     developer.appendChild(githubLink);
 
     modalContent.appendChild(developer);
-  })
+  });
 
   const mentorTitle = create('h3');
   mentorTitle.innerText = dictionary.MENTOR_TITLE;
@@ -84,7 +84,7 @@ export default function disclaimer() {
     img.classList.add('logo');
 
     images.appendChild(img);
-  })
+  });
 
   const agreeButton = button(dictionary.DISCLAIMER_AGREE, () => {
     modal.classList.add('fade');

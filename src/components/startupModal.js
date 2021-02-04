@@ -18,20 +18,19 @@ export default function startupModal() {
   const buttons = create('div');
   buttons.classList.add('buttons-wrapper');
 
-  variables.sounds = "0";
-  variables.music = "0";
+  variables.sounds = '0';
+  variables.music = '0';
 
   const buttonAccept = button(dictionary.ACCEPT, () => {
-    changeMusicVolume(Number(load().music) || "0.1");
-    changeSoundsVolume(Number(load().sounds) || "0.1");
+    changeMusicVolume(Number(load().music) || '0.1');
+    changeSoundsVolume(Number(load().sounds) || '0.1');
     playMenuMusic();
 
     modal.classList.add('fade');
     setTimeout(() => modal.remove(), 250);
-  }, 'accept')
+  }, 'accept');
 
   buttons.appendChild(buttonAccept);
-
 
   const buttonDecline = button(dictionary.DECLINE, () => {
     changeMusicVolume('0');

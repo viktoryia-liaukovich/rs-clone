@@ -23,7 +23,7 @@ function createTimer(parent, time) {
     span.classList.add('timer--count');
     span.innerText = i;
     parent.appendChild(span);
-  })
+  });
 
   const span = create('span');
   span.classList.add('timer--count_divider');
@@ -35,7 +35,7 @@ function createTimer(parent, time) {
     span.classList.add('timer--count');
     span.innerText = i;
     parent.appendChild(span);
-  })
+  });
 }
 
 export default function timer(sec) {
@@ -49,7 +49,7 @@ export default function timer(sec) {
 
   function updateTime() {
     if (variables.isGameInProgress) {
-      time.innerHTML = "";
+      time.innerHTML = '';
       const t = getRemainTime(endTime);
       lastRemainTime = t;
 

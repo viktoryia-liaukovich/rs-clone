@@ -1,18 +1,20 @@
 import optionsPopup from '../components/optionsPopup';
-import { $, append, create, fadeRoot } from '../utils/utils';
+import {
+  $, append, create, fadeRoot,
+} from '../utils/utils';
 import Map from './Map';
 import dictionary from '../configs/dictionary';
 import { save } from '../utils/saveSystem';
 import variables from '../global/variables';
 
-import logo_en from '../assets/UI/logo_en.png';
-import logo_ru from '../assets/UI/logo_ru.png';
+import logoEn from '../assets/UI/logo_en.png';
+import logoRu from '../assets/UI/logo_ru.png';
 import { playSoundEffect, soundbank } from '../utils/music';
 
-const logo_map = {
-  en: logo_en,
-  ru: logo_ru,
-  by: logo_en,
+const logoMap = {
+  en: logoEn,
+  ru: logoRu,
+  by: logoEn,
 };
 
 const menuConfig = {
@@ -28,7 +30,7 @@ export default function Menu() {
 
   const logo = new Image();
   logo.classList.add('logo');
-  logo.src = logo_map[variables.lang];
+  logo.src = logoMap[variables.lang];
 
   const nav = create('nav');
   const ul = create('ul');

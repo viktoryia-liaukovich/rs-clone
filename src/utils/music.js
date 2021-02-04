@@ -11,11 +11,11 @@ import { save } from './saveSystem';
 import variables from '../global/variables';
 
 export const soundbank = {
-  loader: loader,
-  hover: hover,
-  hint: hint,
+  loader,
+  hover,
+  hint,
   win: news,
-  victory: victory,
+  victory,
   map: whoosh,
 };
 
@@ -33,14 +33,13 @@ export function playMenuMusic() {
 
       musicbank.menu.onended = () => {
         musicbank.main.play();
-      }
-    }
+      };
+    };
   }
 }
 
 export function stopMainMusic() {
-  console.log('stop');
-  Object.values(musicbank).forEach(el => el.pause());
+  Object.values(musicbank).forEach((el) => el.pause());
 }
 
 export function playSoundEffect(effect) {
@@ -50,13 +49,15 @@ export function playSoundEffect(effect) {
 }
 
 export function changeMusicVolume(value) {
-  Object.values(musicbank).forEach((el) => {
-    el.volume = value;
+  const bank = Object.values(musicbank);
 
-    if (Object.values(musicbank).some(el => !el.paused)) {
-      playMenuMusic();
-    }
-  });
+  for (let i = 0; i < bank.length; i += 1) {
+    bank[i].volume = value;
+  }
+
+  if (bank.every((el) => el.paused)) {
+    playMenuMusic();
+  }
 
   variables.music = value;
 

@@ -14,7 +14,7 @@ import { playSoundEffect, soundbank, stopMainMusic } from '../utils/music';
 
 const canvasOptions = {
   width: window.innerWidth,
-  height: window.innerWidth * 9 / 16,
+  height: (window.innerWidth * 9) / 16,
 };
 
 export default function Level(config) {
@@ -34,7 +34,7 @@ export default function Level(config) {
     }
   }
 
-  let levelItems = [...items];
+  const levelItems = [...items];
   const stage = new Konva.Stage({
     container: 'root',
     width: canvasOptions.width,
@@ -43,13 +43,13 @@ export default function Level(config) {
 
   const resizer = () => {
     stage.width(window.innerWidth);
-    stage.height(window.innerWidth * 9 / 16);
+    stage.height((window.innerWidth * 9) / 16);
     const scaleX = stage.width() / 1920;
     const scaleY = stage.height() / 1080;
     stage.scaleX(scaleX);
     stage.scaleY(scaleY);
     stage.batchDraw();
-  }
+  };
 
   resizer();
 
@@ -110,8 +110,8 @@ export default function Level(config) {
               if (variables.lastLevel < nextLevel) {
                 variables.lastLevel = nextLevel;
                 save({
-                  lastLevel: nextLevel
-                })
+                  lastLevel: nextLevel,
+                });
               }
 
               playSoundEffect(soundbank.win);
@@ -124,7 +124,7 @@ export default function Level(config) {
                   fadeRoot(() => {
                     $('#root').innerHTML = '';
                     $('#root').appendChild(Map());
-                  }, false)
+                  }, false);
                 },
               });
             } else {
@@ -133,7 +133,7 @@ export default function Level(config) {
               fadeRoot(() => {
                 $('#root').innerHTML = '';
                 $('#root').appendChild(Final());
-              })
+              });
             }
 
             clearInterval(variables.timerId);
@@ -142,7 +142,7 @@ export default function Level(config) {
           if (variables.childMode) {
             findAttempt();
           }
-        }
+        };
 
         item.on('click', actionHandler);
         item.on('tap', actionHandler);
