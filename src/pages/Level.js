@@ -18,8 +18,6 @@ const canvasOptions = {
 };
 
 export default function Level(config, i) {
-  console.log('Level start')
-
   const {
     items, background, time, move,
   } = config;
@@ -156,8 +154,6 @@ export default function Level(config, i) {
       });
     });
   });
-
-  console.log('Level end')
 
   dialogueUI({
     levelItems, move, time, itemsLayer,
