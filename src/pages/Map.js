@@ -13,6 +13,8 @@ import dictionary from '../configs/dictionary';
 import { playSoundEffect, soundbank } from '../utils/music';
 
 export default function Map() {
+  window.history.replaceState({}, 'Map', '/map');
+
   const mapWrapper = create('div');
   mapWrapper.classList.add('map');
 

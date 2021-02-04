@@ -25,6 +25,8 @@ const menuConfig = {
 };
 
 export default function Menu() {
+  window.history.replaceState({}, 'RS Clone', '/');
+
   const menuWrapper = create('div');
   menuWrapper.classList.add('menu');
 
