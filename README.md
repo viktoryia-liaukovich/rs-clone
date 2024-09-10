@@ -1,16 +1,22 @@
-# Rise of the Guardians - Хранители Снов
-## Игра в жанре "поиск предметов", основанная на вселенной одноименного мультфильма
-### [Viktoryia Ventskute](https://github.com/Ventskute) & [Tatsiana Slapik](https://github.com/tatsianaslapik)
+![image](https://github.com/user-attachments/assets/7aec8d4d-7885-41ca-bf01-d3a7634ca8e8)
 
-Ссылка на игру: https://rise-of-the-guardians.netlify.app/
-Статья:  https://ventskute-vika.medium.com/rs-clone-rise-of-the-guardians-506650103a8
-Видео-обзор: https://youtu.be/1oA0NXBOGps
+# Rise of the Guardians
 
-## Краткая инструкция
-- В первую очередь после открытия главного меню рекомендуется зайти в настройки и выставить предпочитаемый язык локализации (русский, белорусский, английский)
-- Для лучшего погружения рекомендуется играть в полноэкранном режиме и в наушниках
-- В детском режиме необходимо найти хотя бы один предмет (ключевой) за определенное количество ходов. В стандартном - все предметы за ограниченное время
+## Video game of "object search" genre, based on the animated movie of the same name
+### [Viktoryia Liaukovich](https://github.com/Ventskute) & [Tatsiana Slapik](https://github.com/tatsianaslapik)
 
-## Технологии
+[>> PLAY HERE <<](https://rise-of-the-guardians.netlify.app/)
+
+Article about the development process:  https://ventskute-vika.medium.com/rs-clone-rise-of-the-guardians-506650103a8
+Mentor's video review: https://youtu.be/1oA0NXBOGps
+
+## Short guide before you start
+- Use headphones and fullscreen mode (in settings) for better experience
+- In **child mode**, you must find at least **one item** (marked blue) with a **limited number of clicks**.
+- In **standard mode** you need to find **all items** from the list with a **limited time**.
+
+## Tech stack
 - HTML Canvas
 - KonvaJS
+- Javascript
+- SCSS
